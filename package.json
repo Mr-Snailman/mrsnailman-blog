@@ -1,0 +1,34 @@
+{
+  "name": "mrsnailman-blog",
+  "version": "1.0.0",
+  "description": "Website",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-react-app",
+    "clean": "nwb clean-app",
+    "start": "nwb serve-react-app",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.2",
+    "@material-ui/icons": "^3.0.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "nwb": "0.23.x"
+  },
+  "author": "Dustin Saunders",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-Snailman/mrsnailman-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mr-Snailman/mrsnailman-blog/issues"
+  },
+  "homepage": "https://github.com/Mr-Snailman/mrsnailman-blog#readme"
+}
