@@ -6,7 +6,7 @@ module.exports = {
   polyfill: true,
   webpack: {
     html: {
-      title: 'ENF Management UI'
+      title: 'Mr. Snailman: Blog'
     },
     publicPath: '/',
     extra: {
