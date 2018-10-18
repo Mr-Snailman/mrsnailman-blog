@@ -2,23 +2,41 @@
   "name": "mrsnailman-blog",
   "version": "1.0.0",
   "description": "Website",
-  "private": true,
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "start": "nwb serve-react-app"
   },
   "dependencies": {
-    "@material-ui/core": "^3.1.2",
-    "@material-ui/icons": "^3.0.1",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "redux": "^4.0.0"
+    "@material-ui/core": "3.1.0",
+    "@material-ui/icons": "3.0.1",
+    "babel-polyfill": "6.26.0",
+    "flux-standard-action": "2.0.1",
+    "history": "4.7.2",
+    "prop-types": "^15.6.2",
+    "react": "16.5.2",
+    "react-copy-to-clipboard": "5.0.1",
+    "react-dom": "16.5.2",
+    "react-redux": "5.0.7",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "redux": "3.7.2",
+    "redux-actions": "2.6.1",
+    "redux-form": "7.4.2",
+    "redux-logger": "3.0.6",
+    "redux-promise-middleware": "5.1.1",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "4.1.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react-app": "^3.0.0",
     "nwb": "0.23.x"
   },
   "author": "Dustin Saunders",
@@ -26,9 +44,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mr-Snailman/mrsnailman-blog.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Mr-Snailman/mrsnailman-blog/issues"
-  },
-  "homepage": "https://github.com/Mr-Snailman/mrsnailman-blog#readme"
+  }
 }
