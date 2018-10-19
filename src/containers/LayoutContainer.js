@@ -1,18 +1,13 @@
 import AppBar from '@material-ui/core/AppBar'
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
-import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp'
+import Avatar from '@material-ui/core/Avatar'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 import classNames from 'classnames'
 import {connect} from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
-import IconButton from '@material-ui/core/IconButton'
+import Grid from '@material-ui/core/Grid'
 import indigo from '@material-ui/core/colors/indigo'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
-import {NavLink} from 'react-router-dom'
-import Paper from '@material-ui/core/Paper'
 import React from 'react'
-import SettingsIcon from '@material-ui/icons/Settings'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import {withRouter} from 'react-router'
@@ -45,18 +40,23 @@ const styles = (classes) => {
       background: 'green'
     },
     appBar: {
-      zIndex: classes.zIndex.drawer + 1,
+      zIndex: classes.zIndex.drawer + 1
     },
     content: {
       flexGrow: 1,
       backgroundColor: classes.palette.background.default,
     },
-    drawer: {
-      zIndex: 2
+    grid: {
+      paddingTop: 50,
     },
-    appLogo: {
-      maxHeight: '30vh',
-      maxWidth: '30vh'
+    avatarDiv: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    avatarHeadshot: {
+      margin: 10,
+      height: 100,
+      width: 100
     }
   }
 }
@@ -75,18 +75,23 @@ class LayoutContainer extends React.Component {
                 variant='title'
                 color='inherit'
                 style={{flexGrow: 2}}
+                align='center'
                 noWrap>
-                Title Typography Page
+                Dustin K. Saunders 
               </Typography>
             </Toolbar>
           </AppBar>
-          <Drawer
-            variant="permanent"
-            className={classNames(this.props.classes.drawer)}>
-
-            <div className={this.props.classes.toolbar} />
-          </Drawer>
-
+          <div className={this.props.classes.toolbar} />
+          <Grid container justify='center' className={this.props.classes.grid}>
+            <Grid item xs={10}>
+              <div className={this.props.classes.avatarDiv}>
+                <Avatar
+                  alt='Dustin Headshot'
+                  src='assets/images/dustin.png'
+                  className={this.props.classes.avatarHeadshot}/>
+              </div>
+            </Grid>
+          </Grid>
           {this.props.children}
         </MuiThemeProvider>
       </div>
