@@ -6,7 +6,7 @@ module.exports = {
   polyfill: true,
   webpack: {
     html: {
-      title: 'Mr. Snailman: Blog'
+      title: 'Dustin K. Saunders'
     },
     publicPath: '/',
     extra: {
