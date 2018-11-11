@@ -5,6 +5,7 @@ import promiseMiddleware from 'redux-promise-middleware'
 import {Provider} from 'react-redux'
 import React from 'react'
 import ReactDom from 'react-dom'
+import ReactGA from 'react-ga'
 import reducers from './reducers'
 import RouteContainer from './containers/RouteContainer'
 import {thunkMiddleware} from './middleware'
@@ -19,6 +20,7 @@ const configFilePath = 'config.json'
 
 const defaultconfig = {
   publicPath: '/',
+  googleAnalyticsId: 'UA-128993986-1',
 }
 
 const renderApplication = (overrideconfig) => {
@@ -43,6 +45,9 @@ const renderApplication = (overrideconfig) => {
       <RouteContainer history={history} store={store}/>
     </Provider>,
     document.getElementById('app'))
+
+  ReactGA.initialize(config.googleAnalyticsId)
+  ReactGA.pageview(window.location.pathname + window.location.search)
 }
 
 axios.get(configFilePath).then(
