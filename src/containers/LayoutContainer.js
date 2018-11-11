@@ -6,7 +6,9 @@ import classNames from 'classnames'
 import {connect} from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Grid from '@material-ui/core/Grid'
+import IconButton from '@material-ui/core/IconButton'
 import indigo from '@material-ui/core/colors/indigo'
+import MenuIcon from '@material-ui/icons/Menu'
 import React from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -42,56 +44,29 @@ const styles = (classes) => {
     appBar: {
       zIndex: classes.zIndex.drawer + 1
     },
-    content: {
-      flexGrow: 1,
-      backgroundColor: classes.palette.background.default,
-    },
-    grid: {
-      paddingTop: 50,
-    },
-    avatarDiv: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    avatarHeadshot: {
-      margin: 10,
-      height: 100,
-      width: 100
-    }
   }
 }
 
 class LayoutContainer extends React.Component {
   render() {
+    const { classes } = this.props
     return (
-      <div className={this.props.classes.root}>
+      <div className={classes.root}>
         <MuiThemeProvider theme={theme}>
           <CssBaseline/>
           <AppBar
             position='absolute'
-            className={classNames(this.props.classes.appBar)}>
+            className={classes.appBar}>
             <Toolbar>
+              <IconButton><MenuIcon/></IconButton>
               <Typography
                 variant='title'
                 color='inherit'
-                style={{flexGrow: 2}}
-                align='center'
-                noWrap>
+                style={{flexGrow: 2}}>
                 Dustin K. Saunders 
               </Typography>
             </Toolbar>
           </AppBar>
-          <div className={this.props.classes.toolbar} />
-          <Grid container justify='center' className={this.props.classes.grid}>
-            <Grid item xs={10}>
-              <div className={this.props.classes.avatarDiv}>
-                <Avatar
-                  alt='Dustin Headshot'
-                  src='assets/images/dustin.png'
-                  className={this.props.classes.avatarHeadshot}/>
-              </div>
-            </Grid>
-          </Grid>
           {this.props.children}
         </MuiThemeProvider>
       </div>

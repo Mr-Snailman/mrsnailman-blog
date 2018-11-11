@@ -1,3 +1,5 @@
+import BlogContainer from './BlogContainer'
+import LandingContainer from './LandingContainer'
 import LayoutContainer from './LayoutContainer'
 import React from 'react'
 import {Route,Router,Switch} from 'react-router'
@@ -14,11 +16,8 @@ export default class RouteContainer extends React.Component {
       <Router history={this.props.history}>
         <LayoutContainer>
           <Switch>
-            <Route exact path={this.routes.home} render={() => {
-              return (
-                <div></div>
-              )
-            }}/>
+            <Route exact path={this.routes.home} component={LandingContainer}/>
+            <Route path={this.routes.blog} component={BlogContainer}/>
           </Switch>
         </LayoutContainer>
       </Router>

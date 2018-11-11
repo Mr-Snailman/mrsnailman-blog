@@ -16,9 +16,9 @@ import 'babel-polyfill'
 axios.defaults.withCredentials = true
 
 const configFilePath = 'config.json'
+
 const defaultconfig = {
-  restAPIUrl: 'http://localhost:8080',
-  publicPath: '/'
+  publicPath: '/',
 }
 
 const renderApplication = (overrideconfig) => {
@@ -28,13 +28,12 @@ const renderApplication = (overrideconfig) => {
 
   config.routes = {
     home: `${config.publicPath}`,
-    articles: `${config.publicPath}articles`,
-    article: `${config.publicPath}article/:id`
+    blog: `${config.publicPath}blog`,
   }
 
   const history = createHistory()
   let middleware = [thunkMiddleware(config), promiseMiddleware()]
-  if(process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production') {
     middleware = [...middleware, createLogger()] 
   }
   const store = createStore(reducers, {config: config}, applyMiddleware(...middleware))
