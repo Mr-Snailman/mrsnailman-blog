@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Website",
   "scripts": {
-    "build": "nwb --config nwb.prod.config.js build-react-app && mv dist/config-prod.json dist/config.json",
+    "build": "nwb --config nwb.prod.config.js build-react-app",
     "clean": "nwb clean-app",
     "start": "nwb serve-react-app"
   },
