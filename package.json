@@ -1,15 +1,11 @@
 {
-  "name": "mrsnailman-blog",
-  "version": "1.0.0",
-  "description": "Website",
-  "scripts": {
-    "build": "nwb --config nwb.prod.config.js build-react-app",
-    "clean": "nwb clean-app",
-    "start": "nwb serve-react-app"
-  },
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@material-ui/core": "3.1.0",
     "@material-ui/icons": "3.0.1",
+    "axios": "^0.19.1",
     "babel-polyfill": "6.26.0",
     "flux-standard-action": "2.0.1",
     "history": "4.7.2",
@@ -26,19 +22,35 @@
     "redux-form": "7.4.2",
     "redux-logger": "3.0.6",
     "redux-promise-middleware": "5.1.1",
+    "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "4.1.1",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-react-app": "^3.0.0",
-    "nwb": "0.23.x"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react-scripts": "3.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "author": "Dustin Saunders",
   "license": "MIT",

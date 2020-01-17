@@ -1,14 +1,14 @@
 import axios from 'axios'
 import createHistory from 'history/createBrowserHistory'
-import {createLogger} from 'redux-logger'
-import promiseMiddleware from 'redux-promise-middleware'
-import {Provider} from 'react-redux'
+import { createLogger } from 'redux-logger'
+import promise from 'redux-promise-middleware'
+import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDom from 'react-dom'
 import ReactGA from 'react-ga'
 import reducers from './reducers'
 import RouteContainer from './containers/RouteContainer'
-import {thunkMiddleware} from './middleware'
+import thunk from 'redux-thunk'
 import {applyMiddleware, createStore} from 'redux'
 import 'core-js/es6/map'
 import 'core-js/es6/set'
@@ -34,7 +34,7 @@ const renderApplication = (overrideconfig) => {
   }
 
   const history = createHistory()
-  let middleware = [thunkMiddleware(config), promiseMiddleware()]
+  let middleware = [thunk, promise]
   if (process.env.NODE_ENV !== 'production') {
     middleware = [...middleware, createLogger()] 
   }
@@ -44,7 +44,7 @@ const renderApplication = (overrideconfig) => {
     <Provider store={store}>
       <RouteContainer history={history} store={store}/>
     </Provider>,
-    document.getElementById('app'))
+    document.getElementById('root'))
 
   ReactGA.initialize(config.googleAnalyticsId)
   ReactGA.pageview(window.location.pathname + window.location.search)
@@ -59,3 +59,4 @@ axios.get(configFilePath).then(
     renderApplication(defaultconfig)
   }
 )
+

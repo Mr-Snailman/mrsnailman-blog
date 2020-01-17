@@ -32,7 +32,7 @@ class LandingContainer extends React.Component {
         <Grid item xs={12} className={classes.gridItem}>
           <Avatar
             alt='Dustin Headshot'
-            src={`${this.props.publicPath}assets/images/dustin.png`}
+            src={`${this.props.publicPath}assets/images/dustin.jpg`}
             className={classes.avatarHeadshot}/>
         </Grid>
         <Grid item xs={12} className={classes.gridItem}>
