@@ -21,6 +21,13 @@ const styles = (theme) => {
       justifyContent: 'center',
       padding: theme.spacing.unit,
     },
+    columnGridItem: {
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      padding: theme.spacing.unit,
+    }
   }
 }
 
@@ -35,8 +42,9 @@ class LandingContainer extends React.Component {
             src={`${this.props.publicPath}assets/images/dustin.jpg`}
             className={classes.avatarHeadshot}/>
         </Grid>
-        <Grid item xs={12} className={classes.gridItem}>
+        <Grid item xs={12} className={classes.columnGridItem}>
           <Typography>Software Engineer, Mentor, Leader</Typography>
+          <Typography>Homebrewer, Entrepreneur</Typography>
         </Grid>
         <Grid item className={classes.gridItem}>
           <a
