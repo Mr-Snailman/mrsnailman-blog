@@ -1,13 +1,14 @@
 import axios from 'axios'
 import createHistory from 'history/createBrowserHistory'
 import { createLogger } from 'redux-logger'
+import createRootReducer from './ducks'
 import promise from 'redux-promise-middleware'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDom from 'react-dom'
 import ReactGA from 'react-ga'
-import reducers from './reducers'
 import RouteContainer from './containers/RouteContainer'
+import { routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk'
 import {applyMiddleware, createStore} from 'redux'
 
@@ -31,11 +32,11 @@ const renderApplication = (overrideconfig) => {
   }
 
   const history = createHistory()
-  let middleware = [thunk, promise]
+  let middleware = [routerMiddleware(history), thunk, promise]
   if (process.env.NODE_ENV !== 'production') {
     middleware = [...middleware, createLogger()] 
   }
-  const store = createStore(reducers, {config: config}, applyMiddleware(...middleware))
+  const store = createStore(createRootReducer(history), {config: config}, applyMiddleware(...middleware))
   
   ReactDom.render(
     <Provider store={store}>
