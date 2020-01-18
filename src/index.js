@@ -1,16 +1,11 @@
 import axios from 'axios'
+import configureStore from './configureStore'
 import createHistory from 'history/createBrowserHistory'
-import { createLogger } from 'redux-logger'
-import createRootReducer from './ducks'
-import promise from 'redux-promise-middleware'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDom from 'react-dom'
 import ReactGA from 'react-ga'
 import RouteContainer from './containers/RouteContainer'
-import { routerMiddleware } from 'connected-react-router'
-import thunk from 'redux-thunk'
-import {applyMiddleware, createStore} from 'redux'
 
 axios.defaults.withCredentials = true
 
@@ -32,12 +27,8 @@ const renderApplication = (overrideconfig) => {
   }
 
   const history = createHistory()
-  let middleware = [routerMiddleware(history), thunk, promise]
-  if (process.env.NODE_ENV !== 'production') {
-    middleware = [...middleware, createLogger()] 
-  }
-  const store = createStore(createRootReducer(history), {config: config}, applyMiddleware(...middleware))
-  
+  const store = configureStore(history, { config: config })
+
   ReactDom.render(
     <Provider store={store}>
       <RouteContainer history={history} store={store}/>
