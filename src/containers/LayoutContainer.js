@@ -1,8 +1,7 @@
-import { connect } from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import NavBar from '../components/NavBar'
 import React from 'react'
-import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles'
+import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   palette: {
@@ -34,41 +33,31 @@ const theme = createMuiTheme({
   },
 })
 
-const styles = (classes) => {
-  return {
-    toolbar: theme.mixins.toolbar,
-    root: {
-      zIndex: 1,
-      overflow: 'hidden',
-      height: '100vh'
-    },
-    error: {
-      background: 'red'
-    },
-    success: {
-      background: 'green'
-    },
-  }
-}
+const useStyles = makeStyles(theme => ({
+  toolbar: theme.mixins.toolbar,
+  root: {
+    zIndex: 1,
+    overflow: 'hidden',
+    height: '100vh'
+  },
+  error: {
+    background: 'red'
+  },
+  success: {
+    background: 'green'
+  },
+}))
 
-class LayoutContainer extends React.Component {
-  render() {
-    const { classes } = this.props
-    return (
-      <div className={classes.root}>
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline/>
-          <NavBar/>
-          {this.props.children}
-        </MuiThemeProvider>
-      </div>
-    )
-  }
+export default (props) => {
+  const classes = useStyles()
+  return (
+    <div className={classes.root}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline/>
+        <NavBar/>
+        {props.children}
+      </ThemeProvider>
+    </div>
+  )
 }
-
-export default connect(
-  (state, props) => ({
-    publicPath: state.config.publicPath
-  }),
-)(withStyles(styles)(LayoutContainer))
 
