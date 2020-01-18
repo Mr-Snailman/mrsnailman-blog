@@ -1,13 +1,8 @@
-import AppBar from '@material-ui/core/AppBar'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
+import NavBar from '../components/NavBar'
 import React from 'react'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import {withRouter} from 'react-router'
-import {createMuiTheme, MuiThemeProvider, withStyles} from '@material-ui/core/styles'
+import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   palette: {
@@ -53,9 +48,6 @@ const styles = (classes) => {
     success: {
       background: 'green'
     },
-    appBar: {
-      zIndex: classes.zIndex.drawer + 1
-    },
   }
 }
 
@@ -66,19 +58,7 @@ class LayoutContainer extends React.Component {
       <div className={classes.root}>
         <MuiThemeProvider theme={theme}>
           <CssBaseline/>
-          <AppBar
-            position='absolute'
-            className={classes.appBar}>
-            <Toolbar>
-              <IconButton><MenuIcon/></IconButton>
-              <Typography
-                variant='title'
-                color='inherit'
-                style={{flexGrow: 2}}>
-                Thoughtful Brew
-              </Typography>
-            </Toolbar>
-          </AppBar>
+          <NavBar/>
           {this.props.children}
         </MuiThemeProvider>
       </div>
@@ -86,15 +66,9 @@ class LayoutContainer extends React.Component {
   }
 }
 
-export default withRouter(connect(
-  (state, props) => {
-    return {
-      publicPath: state.config.publicPath
-    }
-  },
-  (dispatch, props) => {
-    return {
-    }
-  }
-)(withStyles(styles)(LayoutContainer)))
+export default connect(
+  (state, props) => ({
+    publicPath: state.config.publicPath
+  }),
+)(withStyles(styles)(LayoutContainer))
 
