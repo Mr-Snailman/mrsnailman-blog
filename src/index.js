@@ -10,9 +10,6 @@ import reducers from './reducers'
 import RouteContainer from './containers/RouteContainer'
 import thunk from 'redux-thunk'
 import {applyMiddleware, createStore} from 'redux'
-import 'core-js/es6/map'
-import 'core-js/es6/set'
-import 'babel-polyfill'
 
 axios.defaults.withCredentials = true
 
