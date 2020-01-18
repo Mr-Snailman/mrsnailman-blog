@@ -9,7 +9,7 @@ export default (props) => {
   const routes = props.store.getState().config.routes
   return (
     <ConnectedRouter history={props.history}>
-      <LayoutContainer>
+      <LayoutContainer routes={ routes }>
         <Switch>
           <Route exact path={routes.home} component={LandingContainer}/>
           <Route path={routes.blog} component={BlogContainer}/>

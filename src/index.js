@@ -24,6 +24,8 @@ const renderApplication = (overrideconfig) => {
   config.routes = {
     home: `${config.publicPath}`,
     blog: `${config.publicPath}blog`,
+    about: `${config.publicPath}about`,
+    contact: `${config.publicPath}contact`,
   }
 
   const history = createHistory()

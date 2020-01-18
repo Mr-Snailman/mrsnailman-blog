@@ -1,9 +1,9 @@
 import CssBaseline from '@material-ui/core/CssBaseline'
 import NavBar from '../components/NavBar'
 import React from 'react'
-import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles'
+import { createMuiTheme, ThemeProvider, makeStyles, responsiveFontSizes } from '@material-ui/core/styles'
 
-const theme = createMuiTheme({
+const theme = responsiveFontSizes(createMuiTheme({
   palette: {
     type: 'light',
     primary: {
@@ -14,8 +14,18 @@ const theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: 'Dungeon, Arial',
-    fontSize: 24,
+    fontFamily: [
+      'Arial',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(',')
   },
   overrides: {
     MuiCssBaseline: {
@@ -31,7 +41,7 @@ const theme = createMuiTheme({
       },
     },
   },
-})
+}))
 
 const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
@@ -54,7 +64,7 @@ export default (props) => {
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <NavBar/>
+        <NavBar routes={ props.routes }/>
         {props.children}
       </ThemeProvider>
     </div>
