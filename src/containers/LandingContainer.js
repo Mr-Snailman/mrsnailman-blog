@@ -13,9 +13,6 @@ const styles = (theme) => {
       height: 100,
       width: 100
     },
-    grid: {
-      paddingTop: 64,
-    },
     gridItem: {
       display: 'flex',
       justifyContent: 'center',
@@ -35,7 +32,7 @@ class LandingContainer extends React.Component {
   render() {
     const { classes } = this.props
     return (
-      <Grid container justify='center' className={classes.grid}>
+      <React.Fragment>
         <Grid item xs={12} className={classes.gridItem}>
           <Avatar
             alt='Dustin Headshot'
@@ -46,7 +43,7 @@ class LandingContainer extends React.Component {
           <Typography>Software Engineer, Mentor, Leader</Typography>
           <Typography>Homebrewer, Entrepreneur</Typography>
         </Grid>
-      </Grid>
+      </React.Fragment>
     )
   }
 }

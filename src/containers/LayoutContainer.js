@@ -1,4 +1,5 @@
 import CssBaseline from '@material-ui/core/CssBaseline'
+import MainContentWrapper from '../components/MainContentWrapper'
 import NavBar from '../components/NavBar'
 import React from 'react'
 import { createMuiTheme, ThemeProvider, makeStyles, responsiveFontSizes } from '@material-ui/core/styles'
@@ -61,11 +62,13 @@ const useStyles = makeStyles(theme => ({
 export default (props) => {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <ThemeProvider theme={theme}>
+    <div className={ classes.root }>
+      <ThemeProvider theme={ theme }>
         <CssBaseline/>
         <NavBar routes={ props.routes }/>
-        {props.children}
+        <MainContentWrapper>
+          { props.children }
+        </MainContentWrapper>
       </ThemeProvider>
     </div>
   )
