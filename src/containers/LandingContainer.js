@@ -46,36 +46,6 @@ class LandingContainer extends React.Component {
           <Typography>Software Engineer, Mentor, Leader</Typography>
           <Typography>Homebrewer, Entrepreneur</Typography>
         </Grid>
-        <Grid item className={classes.gridItem}>
-          <a
-            href='https://github.com/Mr-Snailman'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Avatar
-              alt='Github'
-              src={`${this.props.publicPath}assets/images/github/GitHub-Mark-32px.png`}/>
-          </a>
-        </Grid>
-        <Grid item className={classes.gridItem}>
-          <a
-            href='https://exerceo.org'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Avatar
-              alt='Exerceo'
-              src={`${this.props.publicPath}assets/images/exerceo.png`}/>
-          </a>
-        </Grid>
-        <Grid item className={classes.gridItem}>
-          <a
-            href='https://linkedin.com/in/dsaunders2414/'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Avatar
-              alt='LinkedIn'
-              src={`${this.props.publicPath}assets/images/linkedin/In-2C-48px-R.png`}/>
-          </a>
-        </Grid>
       </Grid>
     )
   }
