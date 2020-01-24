@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles } from '@material-ui/core/styles'
 import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
+import SocialMediaIcons from '../components/SocialMediaIcons'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
@@ -74,6 +75,7 @@ export default (props) => {
           className={classes.title}>
           Thoughtful Brew
         </Typography>
+        <SocialMediaIcons/>
       </Toolbar>
     </AppBar>
   )

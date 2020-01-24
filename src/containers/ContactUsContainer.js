@@ -2,6 +2,7 @@ import Avatar from '@material-ui/core/Avatar'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
+import SocialMediaIcons from '../components/SocialMediaIcons'
 import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 
@@ -9,25 +10,26 @@ const useStyles = makeStyles(theme => ({
   gridItem: {
     display: 'flex',
     justifyContent: 'center',
-    padding: theme.spacing.unit,
+    padding: theme.spacing(),
   },
   mainText: {
-    paddingLeft: theme.spacing.unit * 6,
-    margin: theme.spacing.unit,
+    paddingLeft: theme.spacing(6),
+    margin: theme.spacing(),
   },
 }))
 export default () => {
-  const email = 'dsaunders2414@gmail.com'
+  const email = 'thoughtfulbrew@gmail.com'
   const publicPath = useSelector((state) => state.config.publicPath)
   const classes = useStyles()
   return (
     <React.Fragment>
-      <Typography className={ classes.mainText }>
-        <p>You can reach me via my email if you have any questions, concerns, or comments:</p>
-        <p>Dustin Saunders, Email: <a href={`mailto:${email}`}>{ email }</a></p>
-        <p>Additionally, drop me a line on the following platforms:</p>
-      </Typography>
+      <div className={ classes.mainText }>
+        <Typography paragraph>You can reach me via my email if you have any questions, concerns, or comments:</Typography>
+        <Typography paragraph>Dustin Saunders, Email: <a href={`mailto:${email}`}>{ email }</a></Typography>
+        <Typography paragraph>Additionally, drop me a line on the following platforms:</Typography>
+      </div>
       <Grid container justify='center'>
+        <SocialMediaIcons/>
         <Grid item className={classes.gridItem}>
           <a
             href='https://github.com/Mr-Snailman'

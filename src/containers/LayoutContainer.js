@@ -29,6 +29,11 @@ const theme = responsiveFontSizes(createMuiTheme({
     ].join(',')
   },
   overrides: {
+    MuiAvatar: {
+      colorDefault: {
+        backgroundColor: '#97C073',
+      },
+    },
     MuiCssBaseline: {
       '@global': {
         '@font-face': [{
