@@ -1,4 +1,5 @@
 import Avatar from '@material-ui/core/Avatar'
+import GithubIcon from '@material-ui/icons/GitHub'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
@@ -29,15 +30,15 @@ export default () => {
         <Typography paragraph>Additionally, drop me a line on the following platforms:</Typography>
       </div>
       <Grid container justify='center'>
-        <SocialMediaIcons/>
+        <SocialMediaIcons classes={ classes }/>
         <Grid item className={classes.gridItem}>
           <a
             href='https://github.com/Mr-Snailman'
             target='_blank'
             rel='noopener noreferrer'>
-            <Avatar
-              alt='Github'
-              src={`${publicPath}assets/images/github/GitHub-Mark-32px.png`}/>
+            <Avatar>
+              <GithubIcon/>
+            </Avatar>
           </a>
         </Grid>
         <Grid item className={classes.gridItem}>
@@ -48,16 +49,6 @@ export default () => {
             <Avatar
               alt='Exerceo'
               src={`${publicPath}assets/images/exerceo.png`}/>
-          </a>
-        </Grid>
-        <Grid item className={classes.gridItem}>
-          <a
-            href='https://linkedin.com/in/dsaunders2414/'
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Avatar
-              alt='LinkedIn'
-              src={`${publicPath}assets/images/linkedin/In-2C-48px-R.png`}/>
           </a>
         </Grid>
       </Grid>

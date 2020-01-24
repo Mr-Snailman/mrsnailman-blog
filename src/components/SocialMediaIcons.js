@@ -2,26 +2,19 @@ import Avatar from '@material-ui/core/Avatar'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import Grid from '@material-ui/core/Grid'
 import InstagramIcon from '@material-ui/icons/Instagram'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
 import TwitterIcon from '@material-ui/icons/Twitter'
-import Typography from '@material-ui/core/Typography'
-import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
   gridItem: {
     display: 'flex',
     justifyContent: 'center',
-    padding: theme.spacing.unit,
-  },
-  mainText: {
-    paddingLeft: theme.spacing.unit * 6,
-    margin: theme.spacing.unit,
   },
 }))
-export default () => {
-  const publicPath = useSelector((state) => state.config.publicPath)
-  const classes = useStyles()
+export default (props) => {
+  const classes = { ...useStyles(), ...props.classes }
   return (
     <React.Fragment>
       <Grid item className={classes.gridItem}>
@@ -51,6 +44,16 @@ export default () => {
           rel='noopener noreferrer'>
           <Avatar>
             <TwitterIcon/>
+          </Avatar>
+        </a>
+      </Grid>
+      <Grid item className={classes.gridItem}>
+        <a
+          href='https://linkedin.com/in/dsaunders2414/'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <Avatar>
+            <LinkedInIcon/>
           </Avatar>
         </a>
       </Grid>

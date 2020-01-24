@@ -16,17 +16,17 @@ const styles = (theme) => {
     gridItem: {
       display: 'flex',
       justifyContent: 'center',
-      padding: theme.spacing.unit,
+      padding: theme.spacing(),
     },
     columnGridItem: {
       alignItems: 'center',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      padding: theme.spacing.unit,
+      padding: theme.spacing(),
     },
     mainTextGridItem: {
-      padding: theme.spacing.unit,
+      padding: theme.spacing(),
     }
   }
 }

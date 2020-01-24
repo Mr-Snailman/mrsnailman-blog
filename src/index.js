@@ -1,6 +1,6 @@
 import axios from 'axios'
 import configureStore from './configureStore'
-import createHistory from 'history/createBrowserHistory'
+import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDom from 'react-dom'
@@ -28,7 +28,7 @@ const renderApplication = (overrideconfig) => {
     contact: `${config.publicPath}contact`,
   }
 
-  const history = createHistory()
+  const history = createBrowserHistory()
   const store = configureStore(history, { config: config })
 
   ReactDom.render(

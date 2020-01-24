@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   gridItem: {
     display: 'flex',
     justifyContent: 'center',
-    padding: theme.spacing.unit,
+    padding: theme.spacing(),
   },
   mainPage: {
     flexGrow: 1,

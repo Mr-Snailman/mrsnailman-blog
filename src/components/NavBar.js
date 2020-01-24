@@ -1,5 +1,4 @@
 import AppBar from '@material-ui/core/AppBar'
-import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const renderMenuItem = (route, title, handleClose) => (
-  <MenuItem component={ NavLink } to={ route } onClick={ handleClose }>{ title }</MenuItem>
+  <MenuItem key={ route } component={ NavLink } to={ route } onClick={ handleClose }>{ title }</MenuItem>
 )
 
 export default (props) => {
@@ -60,7 +59,7 @@ export default (props) => {
       position='absolute'
       className={classes.appBar}>
       <Toolbar>
-        <IconButton><MenuIcon onClick={ handleClick }/></IconButton>
+        <IconButton onClick={ handleClick }><MenuIcon/></IconButton>
         <Menu
           id='nav-menu'
           anchorEl={ anchorEl }

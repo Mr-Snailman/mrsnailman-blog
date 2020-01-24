@@ -9,7 +9,7 @@ const styles = (theme) => {
   return {
     grid: {
       padding: 64,
-      margin: theme.spacing.unit * 2,
+      margin: theme.spacing(2),
     },
   }
 }
@@ -20,7 +20,7 @@ class BlogContainer extends React.Component {
     return (
       <Grid container className={classes.grid}>
         <Grid item xs={12}>
-          <Typography variant='title'>Blog</Typography>
+          <Typography variant='h4'>Blog</Typography>
         </Grid>
         <Grid item>
           <Typography>Coming Soon!</Typography>
