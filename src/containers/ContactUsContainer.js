@@ -14,8 +14,11 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(),
   },
   mainText: {
-    paddingLeft: theme.spacing(6),
-    margin: theme.spacing(),
+    paddingTop: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 }))
 export default () => {
@@ -26,7 +29,7 @@ export default () => {
     <React.Fragment>
       <div className={ classes.mainText }>
         <Typography paragraph>You can reach me via my email if you have any questions, concerns, or comments:</Typography>
-        <Typography paragraph>Dustin Saunders, Email: <a href={`mailto:${email}`}>{ email }</a></Typography>
+        <Typography paragraph>Dustin Saunders: <a href={`mailto:${email}`}>{ email }</a></Typography>
         <Typography paragraph>Additionally, drop me a line on the following platforms:</Typography>
       </div>
       <Grid container justify='center'>
