@@ -20,6 +20,12 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(3),
     textDecoration: 'none',
   },
+  paypalLink: {
+    textDecoration: 'none',
+  },
+  paypal: {
+    fontFamily: 'Dungeon',
+  }
 }))
 
 export default (props) => {
@@ -62,9 +68,22 @@ export default (props) => {
               to={ el.route }
               { ...el.props }>{ el.title }</Typography>
           )}
+          <a
+            href='https://paypal.me/thoughtfulbrew'
+            target='_blank'
+            rel='noopener noreferrer'
+            className={ classes.paypalLink }>
+            <Typography
+              className={ classes.paypal }
+              color='inherit'
+              variant='h5'>
+              Donate
+            </Typography>
+          </a>
         </div>
         <SocialMediaIcons/>
       </Toolbar>
     </AppBar>
   )
 }
+
