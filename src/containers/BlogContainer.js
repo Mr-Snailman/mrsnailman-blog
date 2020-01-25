@@ -1,43 +1,29 @@
-import {connect} from 'react-redux'
+import BlogArticle from '../components/BlogArticle'
+import blogList from '../blogList'
 import Grid from '@material-ui/core/Grid'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import {withRouter} from 'react-router'
-import {withStyles} from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
+import { useSelector } from 'react-redux'
+import { Route, Switch } from 'react-router-dom'
 
-const styles = (theme) => {
-  return {
-    grid: {
-      padding: 64,
-      margin: theme.spacing(2),
-    },
-  }
+const useStyles = makeStyles(theme => ({
+}))
+
+export default () => {
+  const classes = useStyles()
+  const routes = useSelector(state => state.config.routes)
+  return (
+    <React.Fragment>
+      <Switch>
+        <Route exact path={ routes.blog }>
+          <Typography>Blog List goes here!</Typography>
+        </Route>
+        { blogList.map(el => 
+          <Route key={ el.route } exact path={ `${routes.blog}/${el.route}` } render={() => <BlogArticle blogItem={ el }/> } />
+        )}
+      </Switch>
+    </React.Fragment>
+  )
 }
 
-class BlogContainer extends React.Component {
-  render() {
-    const { classes } = this.props
-    return (
-      <Grid container className={classes.grid}>
-        <Grid item xs={12}>
-          <Typography variant='h4'>Blog</Typography>
-        </Grid>
-        <Grid item>
-          <Typography>Coming Soon!</Typography>
-        </Grid>
-      </Grid>
-    )
-  }
-}
-
-export default withRouter(connect(
-  (state, props) => {
-    return {
-      publicPath: state.config.publicPath
-    }
-  },
-  (dispatch, props) => {
-    return {
-    }
-  }
-)(withStyles(styles)(BlogContainer)))
