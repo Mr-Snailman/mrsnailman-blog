@@ -5,6 +5,6 @@ export default [
     fileName: 'sampleArticle.md',
     route: 'sampleArticle',
     author: 'Dustin Saunders',
-    updated: '2020-01-21',
+    updated: 'Jan 21, 2020',
   }
 ]

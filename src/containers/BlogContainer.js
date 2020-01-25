@@ -1,17 +1,11 @@
 import BlogArticle from '../components/BlogArticle'
 import blogList from '../blogList'
-import Grid from '@material-ui/core/Grid'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
 import { useSelector } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 
-const useStyles = makeStyles(theme => ({
-}))
-
 export default () => {
-  const classes = useStyles()
   const routes = useSelector(state => state.config.routes)
   return (
     <React.Fragment>
