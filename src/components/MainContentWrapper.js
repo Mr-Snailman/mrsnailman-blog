@@ -6,6 +6,8 @@ import React from 'react'
 const useStyles = makeStyles(theme => ({
   grid: {
     paddingTop: 64,
+    overflow: 'auto',
+    maxHeight: '100vh',
   },
   gridItem: {
     display: 'flex',
