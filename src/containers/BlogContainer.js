@@ -1,7 +1,7 @@
 import BlogArticle from '../components/BlogArticle'
 import blogList from '../blogList'
+import BlogListing from '../components/BlogListing'
 import React from 'react'
-import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ export default () => {
     <React.Fragment>
       <Switch>
         <Route exact path={ routes.blog }>
-          <Typography>Blog List goes here!</Typography>
+          <BlogListing/>
         </Route>
         { blogList.map(el => 
           <Route key={ el.route } exact path={ `${routes.blog}/${el.route}` } render={() => <BlogArticle blogItem={ el }/> } />
