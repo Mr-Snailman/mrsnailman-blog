@@ -22,15 +22,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default () => {
+const BlogListing = (props) => {
   const blogRoute = useSelector(state => state.config.routes.blog)
   const classes = useStyles()
   const history = useHistory()
 
   return (
     <Grid container>
-      { blogList.map(blogItem => 
-        <Grid item xs={3} className={ classes.blogItem }>
+      { props.blogList.map(blogItem => 
+        <Grid key={ blogItem.route } item xs={3} className={ classes.blogItem }>
           <Card>
             <CardActionArea onClick={() => history.push(`${blogRoute}/${blogItem.route}`)}>
               <CardHeader
@@ -63,3 +63,9 @@ export default () => {
     </Grid>
   )
 }
+
+BlogListing.defaultProps = {
+  blogList: blogList
+}
+
+export default BlogListing
