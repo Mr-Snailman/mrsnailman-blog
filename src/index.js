@@ -13,7 +13,7 @@ const configFilePath = 'config.json'
 
 const defaultconfig = {
   publicPath: '/',
-  googleAnalyticsId: 'UA-128993986-1',
+  googleAnalyticsId: 'UA-157445631-1',
 }
 
 const renderApplication = (overrideconfig) => {
