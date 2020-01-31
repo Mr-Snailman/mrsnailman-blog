@@ -9,7 +9,10 @@ import RouteContainer from './containers/RouteContainer'
 
 axios.defaults.withCredentials = true
 
-const configFilePath = 'config.json'
+let configFilePath = 'config.json'
+if (process.env.NODE_ENV !== 'production') {
+  configFilePath = 'config-prod.json'
+}
 
 const defaultconfig = {
   publicPath: '/',
