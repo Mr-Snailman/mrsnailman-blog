@@ -7,7 +7,7 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo usermod -Ga docker $1 
+sudo usermod -aG docker $1 
 
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -18,5 +18,5 @@ sudo curl -L https://raw.githubusercontent.com/docker/compose/1.25.3/contrib/com
 curl -L https://raw.githubusercontent.com/wmnnd/nginx-certbot/master/init-letsencrypt.sh > init-letsencrypt.sh
 sed -i "s/example\.org/thoughtfulbrew\.com/g" init-letsencrypt.sh
 sed -i 's/email=""/email="thoughtfulbrew.com"/g' init-letsencrypt.sh
-sudo ./init-letsencrypt.sh
+sudo bash init-letsencrypt.sh
 

@@ -1,10 +1,5 @@
 version: '3'
 services:
-  runtime:
-    container_name: thoughtfulbrew 
-    image: thoughtfulbrew 
-    restart: always
-    network_mode: 'host'
   nginx:
     container_name: nginx
     image: nginx:1.17-alpine
@@ -15,6 +10,7 @@ services:
       - ./data/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
+      - ./build:/usr/share/nginx/html
   certbot:
     container_name: certbot
     restart: always
