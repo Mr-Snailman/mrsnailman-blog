@@ -22,7 +22,7 @@ export default (props) => {
   const classes = useStyles()
   return (
     <Grid container justify='center' className={ classes.grid }>
-      <Grid item lg={10} md={8} xs={6} className={ classes.gridItem }>
+      <Grid item xs={10} className={ classes.gridItem }>
         <Paper className={ classes.mainPage }>
           { props.children }
         </Paper>

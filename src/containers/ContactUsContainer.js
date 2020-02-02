@@ -29,7 +29,7 @@ export default () => {
     <React.Fragment>
       <div className={ classes.mainText }>
         <Typography paragraph>You can reach me via my email if you have any questions, concerns, or comments:</Typography>
-        <Typography paragraph>Dustin Saunders: <a href={`mailto:${email}`}>{ email }</a></Typography>
+        <Typography paragraph>Dustin Saunders: { email }</Typography>
         <Typography paragraph>Additionally, drop me a line on the following platforms:</Typography>
       </div>
       <Grid container justify='center'>
