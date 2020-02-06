@@ -8,4 +8,4 @@ In addition to my day to day and hobbies, I volunteer my time to a non-profit, E
 
 I stand by this and is the main reason why I am starting this endeavor. My goal is to continue this mantra through quality content and education of the brewing industry, the brewing process and the people that surround it. I hope to continue the conversation as it has been for years and years and invite others to participate along the way. 
 
-Feel free to reach out via our <a href="#/contact">Contact Us Page</a> with any questions, concerns or comments. Thanks again for your continued support!
+Feel free to reach out via our <a href="/contact">Contact Us Page</a> with any questions, concerns or comments. Thanks again for your continued support!

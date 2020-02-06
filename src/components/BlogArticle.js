@@ -2,7 +2,7 @@ import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import React, { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown/with-html'
 import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 
@@ -42,7 +42,7 @@ export default (props = { blogItem: { fileName: '' }}) => {
       </Grid>
       <Grid item xs={12} className={ classes.mainContent }>
         { mainContent
-            ? <ReactMarkdown source={ mainContent }/>
+            ? <ReactMarkdown source={ mainContent } escapeHtml={ false }/>
             : <Typography>Loading...</Typography>
         }
       </Grid>
