@@ -28,3 +28,4 @@ dist
 *.swo
 
 build
+build.tar.gz
