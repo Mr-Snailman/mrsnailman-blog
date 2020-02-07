@@ -30,7 +30,7 @@ const BlogListing = (props) => {
   return (
     <Grid container>
       { props.blogList.map(blogItem => 
-        <Grid key={ blogItem.route } item lg={3} md={6} xs={12} className={ classes.blogItem }>
+        <Grid key={ blogItem.route } item lg={4} md={6} xs={12} className={ classes.blogItem }>
           <Card>
             <CardActionArea style={{ minHeight: '200px', }} onClick={() => history.push(`${blogRoute}/${blogItem.route}`)}>
               <CardHeader

@@ -2,7 +2,9 @@ import blogList from '../blogList'
 import BlogListing from '../components/BlogListing'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden'
 import React from 'react'
+import SocialMediaIcons from '../components/SocialMediaIcons'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import { useHistory } from 'react-router-dom'
@@ -48,7 +50,13 @@ export default () => {
           <BlogListing blogList={ blogList.slice(0, 4) }/>
         </Grid>
       </Grid>
-      <Grid container>
+      <Grid container justify='center'>
+        <Hidden mdUp>
+          <Grid item xs={12} className={ classes.contactGrid }>
+            <Typography>Connect on Social Media!</Typography>
+          </Grid>
+          <SocialMediaIcons classes={{ gridItem: classes.contactGrid }}/>
+        </Hidden>
         <Grid item xs={12} className={ classes.contactGrid }>
           <Typography>Have a question or a comment?</Typography>
           <Button color='primary' variant='outlined' onClick={ () => history.push(contactUsRoute) }>Contact Us</Button>

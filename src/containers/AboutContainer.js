@@ -35,7 +35,8 @@ export default () => {
           src={`${publicPath}assets/images/dustin.jpg`}
           className={classes.avatarHeadshot}/>
         <Typography>Dustin Saunders</Typography>
-        <Typography>Software Engineer, Mentor, Leader</Typography>
+        <Typography>Leader, Mentor</Typography>
+        <Typography>Software Engineer</Typography>
         <Typography>Homebrewer, Entrepreneur</Typography>
       </Grid>
       <Grid item xs={12} className={ classes.mainTextGridItem }>
