@@ -1,7 +1,12 @@
 import AppBar from '@material-ui/core/AppBar'
+import Hidden from '@material-ui/core/Hidden'
+import IconButton from '@material-ui/core/IconButton'
 import { makeStyles } from '@material-ui/core/styles'
+import Menu from '@material-ui/core/Menu'
+import MenuIcon from '@material-ui/icons/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 import { NavLink } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
 import SocialMediaIcons from '../components/SocialMediaIcons'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -30,12 +35,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default (props) => {
   const routes = props.routes
+  const classes = useStyles()
+  const [anchorEl, setAnchorEl] = useState(null)
+  const handleMenuClick = e => setAnchorEl(e.currentTarget)
+  const handleMenuClose = () => setAnchorEl(null)
+  const menuTypographyFunc = (navItem) =>
+    <Typography
+      className={ classes.dungeon }
+      key={ navItem.route }
+      color='inherit'
+      variant='h5'
+      component={ NavLink }
+      to={ navItem.route }
+      { ...navItem.props }>{ navItem.title }</Typography>
+
   const navItems = [
-    {
-      route: routes.home,
-      title: 'Thoughtful Brew',
-      props: { variant: 'h4' },
-    },
     {
       route: routes.blog,
       title: 'Blog',
@@ -48,9 +62,21 @@ export default (props) => {
       route: routes.contact,
       title: 'Contact Us',
     }
-  ]
-
-  const classes = useStyles()
+  ].map(menuTypographyFunc)
+    .concat([
+    <a
+      href='https://paypal.me/thoughtfulbrew'
+      target='_blank'
+      rel='noopener noreferrer'
+      className={ classes.paypalLink }>
+      <Typography
+        className={ classes.paypal }
+        color='inherit'
+        variant='h5'>
+        Donate
+      </Typography>
+    </a>,
+  ])
 
   return (
     <AppBar
@@ -58,30 +84,33 @@ export default (props) => {
       className={classes.appBar}>
       <Toolbar>
         <div className={ classes.title }>
-          { navItems.map(el =>
-            <Typography
-              className={ classes.dungeon }
-              key={ el.route }
-              color='inherit'
-              variant='h5'
-              component={ NavLink }
-              to={ el.route }
-              { ...el.props }>{ el.title }</Typography>
-          )}
-          <a
-            href='https://paypal.me/thoughtfulbrew'
-            target='_blank'
-            rel='noopener noreferrer'
-            className={ classes.paypalLink }>
-            <Typography
-              className={ classes.paypal }
-              color='inherit'
-              variant='h5'>
-              Donate
-            </Typography>
-          </a>
+          <Hidden mdUp>
+            <IconButton onClick={ handleMenuClick }>
+              <MenuIcon/>
+            </IconButton>
+            <Menu
+              id='nav-menu'
+              anchorEl={ anchorEl }
+              keepMounted
+              open={ Boolean(anchorEl) }
+              onClose={ handleMenuClose }>
+              { navItems.map((el, i) => 
+                <MenuItem key={ i } onClick={ handleMenuClose }>{ el }</MenuItem>
+              )}
+            </Menu>
+          </Hidden>
+          { menuTypographyFunc({
+              route: routes.home,
+              title: 'Thoughtful Brew',
+              props: { variant: 'h4' },
+          })}
+          <Hidden smDown>
+              { navItems }
+          </Hidden>
         </div>
-        <SocialMediaIcons/>
+        <Hidden smDown>
+          <SocialMediaIcons/>
+        </Hidden>
       </Toolbar>
     </AppBar>
   )
