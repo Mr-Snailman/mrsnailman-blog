@@ -46,7 +46,6 @@ export default () => {
       </Grid>
       <Grid container className={ classes.blogGrid }>
         <Grid item xs={12}>
-          <Typography>Recent Entries</Typography>
           <BlogListing blogList={ blogList.slice(0, 4) }/>
         </Grid>
       </Grid>

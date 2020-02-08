@@ -14,7 +14,12 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
   },
   mainContent: {
-    padding: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(2),
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(),
+    },
   }
 }))
 

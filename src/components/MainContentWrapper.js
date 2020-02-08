@@ -12,7 +12,12 @@ const useStyles = makeStyles(theme => ({
   gridItem: {
     display: 'flex',
     justifyContent: 'center',
-    padding: theme.spacing(),
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(), 
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
   },
   mainPage: {
     flexGrow: 1,
@@ -22,7 +27,7 @@ export default (props) => {
   const classes = useStyles()
   return (
     <Grid container justify='center' className={ classes.grid }>
-      <Grid item xs={10} className={ classes.gridItem }>
+      <Grid item sm={12} md={10} className={ classes.gridItem }>
         <Paper className={ classes.mainPage }>
           { props.children }
         </Paper>

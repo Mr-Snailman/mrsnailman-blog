@@ -94,6 +94,12 @@ export default (props) => {
               keepMounted
               open={ Boolean(anchorEl) }
               onClose={ handleMenuClose }>
+              <MenuItem onClick={ handleMenuClose }>
+                { menuTypographyFunc({
+                  route: routes.home,
+                  title: 'Home',
+                })}
+              </MenuItem>
               { navItems.map((el, i) => 
                 <MenuItem key={ i } onClick={ handleMenuClose }>{ el }</MenuItem>
               )}

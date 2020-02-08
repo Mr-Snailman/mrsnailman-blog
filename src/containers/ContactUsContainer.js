@@ -15,6 +15,15 @@ const useStyles = makeStyles(theme => ({
   },
   mainText: {
     paddingTop: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2),
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: theme.spacing(),
+      paddingRight: theme.spacing(),
+      textAlign: 'center',
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
