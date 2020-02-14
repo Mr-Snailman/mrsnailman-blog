@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.17-alpine
+    restart: always
+    network_mode: 'host'
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    volumes:
+      - ./data/nginx-simple:/etc/nginx/conf.d
+      - ./build:/usr/share/nginx/html
