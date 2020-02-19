@@ -38,6 +38,8 @@ ReactDom.render(
   </Provider>,
   document.getElementById('root'))
 
-ReactGA.initialize('UA-157445631-1')
-ReactGA.pageview(window.location.pathname + window.location.search)
+if (process.env.NODE_ENV === 'production') {
+  ReactGA.initialize('UA-157445631-1')
+  ReactGA.pageview(window.location.pathname + window.location.search)
+}
 
