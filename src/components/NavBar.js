@@ -10,6 +10,7 @@ import React, { useState } from 'react'
 import SocialMediaIcons from '../components/SocialMediaIcons'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -33,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default (props) => {
-  const routes = props.routes
+export default () => {
+  const routes = useSelector(state => state.config.routes)
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const handleMenuClick = e => setAnchorEl(e.currentTarget)
