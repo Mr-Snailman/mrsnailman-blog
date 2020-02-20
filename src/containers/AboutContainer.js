@@ -1,5 +1,6 @@
 import Avatar from '@material-ui/core/Avatar'
 import Grid from '@material-ui/core/Grid'
+import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
@@ -33,6 +34,9 @@ export default () => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>Thoughtful Brew - About</title>
+      </Helmet>
       <Grid item xs={12} className={classes.columnGridItem}>
         <Avatar
           alt='Dustin Headshot'

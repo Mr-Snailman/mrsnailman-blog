@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
+import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown/with-html'
@@ -32,6 +33,9 @@ export default (props = { blogItem: { fileName: '' }}) => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>Thoughtful Brew - { blogItem.title }</title>
+      </Helmet>
       <Grid item xs={12} className={ classes.columnGridItem }>
         <Typography color='inherit' variant='h2' className={ classes.dungeon }>{ blogItem.title }</Typography>
         { blogItem.subTitle

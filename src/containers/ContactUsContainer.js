@@ -1,6 +1,7 @@
 import Avatar from '@material-ui/core/Avatar'
 import GithubIcon from '@material-ui/icons/GitHub'
 import Grid from '@material-ui/core/Grid'
+import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
 import SocialMediaIcons from '../components/SocialMediaIcons'
@@ -36,6 +37,9 @@ export default () => {
   const classes = useStyles()
   return (
     <React.Fragment>
+      <Helmet>
+        <title>Thoughtful Brew - Contact Us</title>
+      </Helmet>
       <div className={ classes.mainText }>
         <Typography paragraph>You can reach me via my email if you have any questions, concerns, or comments:</Typography>
         <Typography paragraph>Dustin Saunders: { email }</Typography>

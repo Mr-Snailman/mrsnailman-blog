@@ -2,6 +2,7 @@ import BlogArticle from '../components/BlogArticle'
 import blogList from '../blogList'
 import BlogListing from '../components/BlogListing'
 import Grid from '@material-ui/core/Grid'
+import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
@@ -23,6 +24,9 @@ export default () => {
     <React.Fragment>
       <Switch>
         <Route exact path={ blogRoute }>
+          <Helmet>
+            <title>Thoughtful Brew - Blog</title>
+          </Helmet>
           <Grid container justify='center'>
             <Grid item xs={12} className={ classes.title }>
               <Typography variant='h3' className={ classes.dungeon }>Blog Entries</Typography>
