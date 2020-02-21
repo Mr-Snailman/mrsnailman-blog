@@ -50,7 +50,7 @@ export default () => {
         </Grid>
       </Grid>
       <Grid container justify='center'>
-        <Hidden mdUp>
+        <Hidden implementation='css' mdUp>
           <Grid item xs={12} className={ classes.contactGrid }>
             <Typography>Connect on Social Media!</Typography>
           </Grid>
