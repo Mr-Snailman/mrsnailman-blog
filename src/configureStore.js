@@ -10,5 +10,20 @@ export default (history, preloadedState = {}) => {
   if (process.env.NODE_ENV !== 'production') {
     middleware = [...middleware, createLogger()] 
   }
-  return createStore(createRootReducer(history), preloadedState, applyMiddleware(...middleware))
+
+  const store = createStore(createRootReducer(history), {
+    ...preloadedState,
+    // Load state from server-generated HTML
+    ...window.__PRELOADED_STATE__,
+  }, applyMiddleware(...middleware))
+
+  // Delete the variable
+  delete window.__PRELOADED_STATE__
+
+  // Tell react-snap how to save state
+  window.snapSaveState = () => ({
+    __PRELOADED_STATE__: store.getState()
+  })
+
+  return store
 } 
