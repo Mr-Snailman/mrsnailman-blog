@@ -7,7 +7,7 @@ export default () => {
   return (
     <LayoutContainer>
       <Helmet>
-        <meta charSet='utf-8'/>
+        <meta charset='utf-8'/>
         <meta name="description" content="Dustin Saunders Blog Website"/>
         {
           /* 
