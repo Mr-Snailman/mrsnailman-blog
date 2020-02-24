@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown/with-html'
+import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 
@@ -33,6 +34,11 @@ export default (props = { blogItem: { fileName: '' }}) => {
 
   return (
     <React.Fragment>
+      <Seo
+        title={ 'Thoughtful Brew - ' + blogItem.title }
+        description={ mainContent ? mainContent.split(' ').slice(0, 50).reduce((accum, val) => accum + ' ' + val, '') + '...' : 'Thoughtful Brew Article: ' + blogItem.title }
+        path='/contact'
+      />
       <Helmet>
         <title>Thoughtful Brew - { blogItem.title }</title>
       </Helmet>

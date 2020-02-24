@@ -1,8 +1,8 @@
 import Avatar from '@material-ui/core/Avatar'
 import Grid from '@material-ui/core/Grid'
-import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
+import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 
@@ -34,9 +34,11 @@ export default () => {
 
   return (
     <React.Fragment>
-      <Helmet>
-        <title>Thoughtful Brew - About</title>
-      </Helmet>
+      <Seo
+        title='Thoughtful Brew - About'
+        description='About the author, Dustin Saunders, who writes for the Thoughtful Brew Blog.'
+        path='/about'
+      />
       <Grid item xs={12} className={classes.columnGridItem}>
         <Avatar
           alt='Dustin Headshot'

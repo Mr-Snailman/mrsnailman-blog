@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 import React from 'react'
+import Seo from '../Seo'
 import SocialMediaIcons from '../components/SocialMediaIcons'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
@@ -32,6 +33,11 @@ export default () => {
   const history = useHistory()
   return (
     <React.Fragment>
+      <Seo
+        title='Thoughtful Brew'
+        description='Thoughtful Brew Blog - Good Beer, Good Time, and the Good Life.'
+        path='/'
+      />
       <Grid container className={ classes.titleGrid }>
         <Grid item xs={12}>
           <Typography variant='h2' className={ classes.landingTitle }>
