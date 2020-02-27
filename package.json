@@ -48,7 +48,8 @@
     "extends": "react-app"
   },
   "reactSnap": {
-    "inlineCss": true
+    "inlineCss": true,
+    "include": ["/200.html"]
   },
   "browserslist": {
     "production": [

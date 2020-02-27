@@ -7,13 +7,5 @@ module.exports = {
   ],
   stripPrefix: "build",
   publicPath: ".",
-  navigateFallback: "/200.html",
-  navigateFallbackWhitelist: [/^(?!\/__).*/],
-  dontCacheBustUrlsMatching: /\.\w{8}\./,
-  runtimeCaching: [
-    {
-      urlPattern: /api/,
-      handler: "fastest"
-    }
-  ]
+  navigateFallback: "/200.html"
 };
