@@ -6,6 +6,7 @@ const AboutContainer = React.lazy(() => import('./AboutContainer'))
 const BlogContainer = React.lazy(() => import('./BlogContainer'))
 const ContactUsContainer = React.lazy(() => import('./ContactUsContainer'))
 const LandingContainer = React.lazy(() => import('./LandingContainer'))
+const NoMatch = React.lazy(() => import('./404'))
 
 export default () => {
   const routes = useSelector(state => state.config.routes)
@@ -16,6 +17,7 @@ export default () => {
         <Route exact path={ routes.contact } component={ ContactUsContainer }/>
         <Route exact path={ routes.about } component={ AboutContainer }/>
         <Route path={ routes.blog } component={ BlogContainer }/>
+        <Route path="*" component={ NoMatch }/>
       </Switch>
     </Suspense>
   )

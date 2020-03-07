@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 
+const NoMatch = React.lazy(() => import('./404'))
+
 const useStyles = makeStyles(theme => ({
   dungeon: {
     fontFamily: 'Dungeon',
@@ -37,6 +39,7 @@ export default () => {
         { blogList.map(el => 
           <Route key={ el.route } exact path={ `${blogRoute}/${el.route}` } render={() => <BlogArticle blogItem={ el }/> } />
         )}
+        <Route path="*" component={ NoMatch }/>
       </Switch>
     </React.Fragment>
   )
