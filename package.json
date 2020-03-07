@@ -32,24 +32,16 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react-scripts": "3.4.0",
-    "react-snap": "^1.23.0",
-    "sw-precache": "^5.2.1"
+    "react-scripts": "3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap && npm run generate-sw",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "generate-sw": "sw-precache --root=build --config scripts/sw-precache-config.js && uglifyjs build/service-worker.js -o build/service-worker.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "reactSnap": {
-    "inlineCss": true,
-    "include": ["/200.html"]
   },
   "browserslist": {
     "production": [
