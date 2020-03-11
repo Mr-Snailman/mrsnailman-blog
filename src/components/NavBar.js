@@ -1,10 +1,11 @@
 import AppBar from '@material-ui/core/AppBar'
+import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
 import { makeStyles } from '@material-ui/core/styles'
-import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
 import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
 import SocialMediaIcons from '../components/SocialMediaIcons'
@@ -37,9 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default () => {
   const routes = useSelector(state => state.config.routes)
   const classes = useStyles()
-  const [anchorEl, setAnchorEl] = useState(null)
-  const handleMenuClick = e => setAnchorEl(e.currentTarget)
-  const handleMenuClose = () => setAnchorEl(null)
+  const [navDrawer, setNavDrawer] = useState(false)
   const menuTypographyFunc = (navItem) =>
     <Typography
       className={ classes.dungeon }
@@ -86,25 +85,22 @@ export default () => {
       <Toolbar>
         <div className={ classes.title }>
           <Hidden mdUp>
-            <IconButton onClick={ handleMenuClick }>
+            <IconButton onClick={ () => setNavDrawer(true) }>
               <MenuIcon/>
             </IconButton>
-            <Menu
-              id='nav-menu'
-              anchorEl={ anchorEl }
-              keepMounted
-              open={ Boolean(anchorEl) }
-              onClose={ handleMenuClose }>
-              <MenuItem onClick={ handleMenuClose }>
-                { menuTypographyFunc({
-                  route: routes.home,
-                  title: 'Home',
-                })}
-              </MenuItem>
-              { navItems.map((el, i) => 
-                <MenuItem key={ i } onClick={ handleMenuClose }>{ el }</MenuItem>
-              )}
-            </Menu>
+            <Drawer open={ navDrawer } onClose={ () => setNavDrawer(false) }>
+              <List onClick={ () => setNavDrawer(false) }>
+                <ListItem>
+                  { menuTypographyFunc({
+                    route: routes.home,
+                    title: 'Home',
+                  })}
+                </ListItem>
+                { navItems.map((el, i) => 
+                  <ListItem key={ i }>{ el }</ListItem>
+                )}
+              </List>
+            </Drawer>
           </Hidden>
           { menuTypographyFunc({
               route: routes.home,
