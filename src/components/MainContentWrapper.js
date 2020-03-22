@@ -1,9 +1,11 @@
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
+import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
+import UnsplashCredit from '../components/UnsplashCredit'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -52,6 +54,11 @@ export default (props) => {
           }
         </Paper>
       </Grid>
+      <Hidden smDown>
+        <Grid item sm={12} md={10} className={ classes.gridItem }>
+          <UnsplashCredit/>
+        </Grid>
+      </Hidden>
     </Grid>
   )
 }
