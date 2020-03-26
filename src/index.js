@@ -1,5 +1,4 @@
 import App from './App'
-import axios from 'axios'
 import configureStore from './configureStore'
 import { ConnectedRouter } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
@@ -10,8 +9,6 @@ import ReactDom from 'react-dom'
 import ReactGA from 'react-ga'
 import theme from './configureTheme'
 import { ThemeProvider, } from '@material-ui/core/styles'
-
-axios.defaults.withCredentials = true
 
 const config = {
   publicPath: '/',
