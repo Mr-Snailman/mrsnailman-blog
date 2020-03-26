@@ -1,5 +1,5 @@
 import BlogArticle from '../components/BlogArticle'
-import blogList from '../blogList'
+import blogList from '../blog'
 import BlogListing from '../components/BlogListing'
 import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'

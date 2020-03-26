@@ -1,12 +1,9 @@
-import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
-import React, { useState } from 'react'
-import ReactMarkdown from 'react-markdown/with-html'
+import React from 'react'
 import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
-import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
   dungeon: {
@@ -25,18 +22,14 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default (props = { blogItem: { fileName: '' }}) => {
+export default (props) => {
   const { blogItem } = props
   const classes = useStyles()
-  const publicPath = useSelector(state => state.config.publicPath)
-  const [mainContent, setMainContent] = useState('')
-  axios.get(publicPath + 'blog/' + blogItem.fileName).then(succ => setMainContent(succ.data))
-
   return (
     <React.Fragment>
       <Seo
         title={ 'Thoughtful Brew - ' + blogItem.title }
-        description={ mainContent ? mainContent.split(' ').slice(0, 50).reduce((accum, val) => accum + ' ' + val, '') + '...' : 'Thoughtful Brew Article: ' + blogItem.title }
+        description={ blogItem.seo }
         path='/contact'
       />
       <Helmet>
@@ -56,10 +49,7 @@ export default (props = { blogItem: { fileName: '' }}) => {
         <Typography variant='caption'>{ blogItem.author }, { blogItem.updated }</Typography>
       </Grid>
       <Grid item xs={12} className={ classes.mainContent }>
-        { mainContent
-            ? <ReactMarkdown source={ mainContent } escapeHtml={ false }/>
-            : <Typography>Loading...</Typography>
-        }
+        { blogItem.content }
       </Grid>
     </React.Fragment>
   )

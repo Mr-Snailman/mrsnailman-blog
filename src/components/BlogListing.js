@@ -1,4 +1,4 @@
-import blogList from '../blogList'
+import blogList from '../blog'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardContent from '@material-ui/core/CardContent'

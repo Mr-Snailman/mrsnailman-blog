@@ -1,4 +1,4 @@
-import blogList from '../blogList'
+import blogList from '../blog'
 import BlogListing from '../components/BlogListing'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
