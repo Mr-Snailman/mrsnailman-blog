@@ -1,6 +1,8 @@
 import Avatar from '@material-ui/core/Avatar'
 import Grid from '@material-ui/core/Grid'
+import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core/styles'
+import { NavLink } from 'react-router-dom'
 import React from 'react'
 import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
@@ -18,6 +20,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     padding: theme.spacing(),
+  },
+  dungeon: {
+    fontFamily: 'Dungeon',
+    textAlign: 'center',
   },
   mainTextGridItem: {
     padding: theme.spacing(),
@@ -50,10 +56,11 @@ export default () => {
         <Typography>Homebrewer, Entrepreneur</Typography>
       </Grid>
       <Grid item xs={12} className={ classes.mainTextGridItem }>
-        <Typography paragraph>Truly believing in and valuing the success of others through collaborative hard work and learning, Dustin is a driven and passionate leader that has taken his years in the IT industry to constantly learn, grow, and give back through teaching and mentoring. In his everyday work at Interclypse, Dustin works as a Software Engineer and Technical Leader on several projects. One of his passions is realized at Exerceo, a 501c(3) non-profit, where he strongly advocates for active mentorship in and out of the work place by leading the Software Engineering Program. Interested in everything information technology related, including software engineering, cybersecurity, and system administrator, Dustin is a strong, passionate software engineering candidate.</Typography>
-        <Typography paragraph>Outside of the office, Dustin spends his time as a Homebrewer, practicing and mastering his craft through continual learning and growth through hands-on experience. He is constantly looking for the next big beer to brew, how different ingredients fit into existing recipes and themes, and finally how he can break the traditional mold even further through Extreme Brewing.</Typography>
-        <Typography paragraph>He additionally loves rock climbing (indoor and outdoor), Dungeons and Dragons, and general Science Fiction/Fantasy genres across all media.</Typography>
-        <Typography paragraph>Besides his loving and patient wife, he lives with two rapscallion cats, Chester and Hobbes.</Typography>
+        <Typography paragraph>Hello, and welcome to Thoughtful Brew! Thank you for taking the time to check us out. We are a blog dedicated to the togetherness and interest around Beer, Brewing and the community surrounding the hobby and profession. We envision this platform becomes an outlet for our internal musings on beer and beer culture, educating the general public on the growing passtime, as well as providing a great place to discuss topics and trends within the industry.</Typography>
+        <Typography paragraph>My name is Dustin, and I am a Software Developer during the day, enjoying solving problems and collaborating with customers and partners to provide solutions. Although, in my spare time, I enjoy the process of homebrewing as well as learning how to become better and improve through continual development of my skills and process. There is a problem solving aspect to most parts of life, and I find that brewing is no different. I also believe that:</Typography>
+        <Typography paragraph variant='h3' className={ classes.dungeon }>Beer brings people together.</Typography>
+        <Typography paragraph>I stand by this, and it is the main reason why I am starting this endeavor. My goal is to continue this mantra through quality content and education of the brewing industry, the brewing process and the people that surround it. I hope to continue the conversation as it has been for years and years and invite others to participate along the way.</Typography>
+        <Typography paragraph>Feel free to reach out via our <Link to="/contact" component={ NavLink }>Contact Us Page</Link> with any questions, concerns or comments. Thanks again for your continued support!</Typography>
       </Grid>
     </React.Fragment>
   )
