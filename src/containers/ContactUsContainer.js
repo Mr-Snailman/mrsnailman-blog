@@ -1,4 +1,5 @@
 import Avatar from '@material-ui/core/Avatar'
+import exerceo from './exerceo.png'
 import GithubIcon from '@material-ui/icons/GitHub'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -66,7 +67,7 @@ export default () => {
             rel='noopener noreferrer'>
             <Avatar
               alt='Exerceo'
-              src={`${publicPath}assets/images/exerceo.png`}/>
+              src={ exerceo }/>
           </a>
         </Grid>
       </Grid>

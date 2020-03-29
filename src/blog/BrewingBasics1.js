@@ -11,7 +11,7 @@ const getContent = () =>
 export default {
   title: 'Brewing Basics - Ingredients',
   route: 'brewing-basics-ingredients',
-  author: 'Dustin',
+  author: 'Dustin Saunders',
   updated: 'March 30, 2020',
   content: getContent(),
   seo: 'Thoughtful Brew Article: Brewing Basics - Ingredients', 
