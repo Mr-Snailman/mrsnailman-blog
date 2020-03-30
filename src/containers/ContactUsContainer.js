@@ -7,7 +7,6 @@ import React from 'react'
 import Seo from '../Seo'
 import SocialMediaIcons from '../components/SocialMediaIcons'
 import Typography from '@material-ui/core/Typography'
-import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
   gridItem: {
@@ -34,7 +33,6 @@ const useStyles = makeStyles(theme => ({
 }))
 export default () => {
   const email = 'thoughtfulbrew@gmail.com'
-  const publicPath = useSelector((state) => state.config.publicPath)
   const classes = useStyles()
   return (
     <React.Fragment>

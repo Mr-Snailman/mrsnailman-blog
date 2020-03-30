@@ -8,7 +8,7 @@ export default responsiveFontSizes(createMuiTheme({
       main: '#97C073',
     },
     secondary: {
-      main: '#99CC66',
+      main: '#555555',
     }
   },
   typography: {

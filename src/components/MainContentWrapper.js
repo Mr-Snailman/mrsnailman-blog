@@ -47,7 +47,7 @@ export default (props) => {
               ? <Grid container>
                 <Grid item xs={12} className={ classes.contactGrid }>
                   <Typography>Have a question or a comment?</Typography>
-                  <Button color='primary' variant='outlined' onClick={ () => history.push(contactUsRoute) }>Contact Us</Button>
+                  <Button color='secondary' onClick={ () => history.push(contactUsRoute) }>Contact Us</Button>
                 </Grid>
               </Grid>
               : null

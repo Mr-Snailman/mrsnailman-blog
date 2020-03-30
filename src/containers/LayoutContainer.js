@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     overflow: 'hidden',
     height: '100vh',
     [theme.breakpoints.up('sm')]: {
-      background: `no-repeat center/100% url(${background})`,
+      background: `repeat-y top/100% url(${background})`,
     },
   },
   error: {

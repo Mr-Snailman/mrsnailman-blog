@@ -7,7 +7,6 @@ import { NavLink } from 'react-router-dom'
 import React from 'react'
 import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
-import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
   avatarHeadshot: {
@@ -16,10 +15,7 @@ const useStyles = makeStyles(theme => ({
     width: 100
   },
   columnGridItem: {
-    alignItems: 'center',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
     padding: theme.spacing(),
   },
   dungeon: {
@@ -27,8 +23,11 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
   },
   mainTextGridItem: {
-    padding: theme.spacing(),
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(2),
+    },
     [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(),
       alignItems: 'center',
       textAlign: 'center',
     },
@@ -37,8 +36,6 @@ const useStyles = makeStyles(theme => ({
 
 export default () => {
   const classes = useStyles()
-  const publicPath = useSelector(state => state.config.publicPath)
-
   return (
     <React.Fragment>
       <Seo
@@ -46,7 +43,7 @@ export default () => {
         description='About the author, Dustin Saunders, who writes for the Thoughtful Brew Blog.'
         path='/about'
       />
-      <Grid item xs={12} className={classes.columnGridItem}>
+      <Grid item xs={12} className={classes.columnGridItem} justify='center' direction='column' alignItems='center'>
         <Avatar
           alt='Dustin Headshot'
           src={ dustin }
