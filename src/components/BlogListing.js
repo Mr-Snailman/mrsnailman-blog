@@ -14,6 +14,9 @@ const useStyles = makeStyles(theme => ({
   blogItem: {
     padding: theme.spacing(3),
   },
+  noContent: {
+    textAlign: 'center',
+  },
   cardHeader: {
     textAlign: 'center',
   },
@@ -29,37 +32,41 @@ const BlogListing = (props) => {
 
   return (
     <Grid container>
-      { props.blogList.map(blogItem => 
-        <Grid key={ blogItem.route } item lg={4} md={6} xs={12} className={ classes.blogItem }>
-          <Card>
-            <CardActionArea style={{ minHeight: '200px', }} onClick={() => history.push(`${blogRoute}/${blogItem.route}`)}>
-              <CardHeader
-                className={ classes.cardHeader }
-                title={
-                  <React.Fragment>
-                    <Typography
-                      color='inherit'
-                      variant='h3'
-                      className={ classes.dungeon }>
-                      { blogItem.title }
-                    </Typography>
-                    { blogItem.subTitle
-                        ? <Typography
-                          color='inherit'
-                          variant='h4'
-                          className={ classes.dungeon }>
-                          { blogItem.subTitle }
-                        </Typography>
-                        : null
-                    }
-                  </React.Fragment>
-                }
-                subheader={`${blogItem.author}, ${blogItem.updated}`}/>
-              <CardContent>{ blogItem.preview }</CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid>
-      )}
+      { blogList && blogList.length > 0
+          ? props.blogList.map(blogItem => 
+          <Grid key={ blogItem.route } item lg={4} md={6} xs={12} className={ classes.blogItem }>
+            <Card>
+              <CardActionArea style={{ minHeight: '200px', }} onClick={() => history.push(`${blogRoute}/${blogItem.route}`)}>
+                <CardHeader
+                  className={ classes.cardHeader }
+                  title={
+                    <React.Fragment>
+                      <Typography
+                        color='inherit'
+                        variant='h3'
+                        className={ classes.dungeon }>
+                        { blogItem.title }
+                      </Typography>
+                      { blogItem.subTitle
+                          ? <Typography
+                            color='inherit'
+                            variant='h4'
+                            className={ classes.dungeon }>
+                            { blogItem.subTitle }
+                          </Typography>
+                          : null
+                      }
+                    </React.Fragment>
+                  }
+                  subheader={`${blogItem.author}, ${blogItem.updated}`}/>
+                <CardContent>{ blogItem.preview }</CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>)
+          : <Grid xs={12} item className={ classes.noContent }>
+            <Typography>Content coming soon!</Typography>
+          </Grid>
+      }
     </Grid>
   )
 }
