@@ -10,8 +10,14 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1,
     overflow: 'hidden',
     height: '100vh',
-    [theme.breakpoints.up('sm')]: {
-      background: `repeat-y top/100% url(${background})`,
+    [theme.breakpoints.up('lg')]: {
+      background: `no-repeat top/120% url(${background})`,
+    },
+    [theme.breakpoints.down('md')]: {
+      background: `no-repeat top/150% url(${background})`,
+    },
+    [theme.breakpoints.down('sm')]: {
+      background: '#FFF',
     },
   },
   error: {
