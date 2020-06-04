@@ -1,5 +1,6 @@
 import { createLogger } from 'redux-logger'
 import createRootReducer from './ducks'
+import googleAnalytics from './reactGAMiddleware'
 import promise from 'redux-promise-middleware'
 import { routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk'
@@ -9,6 +10,8 @@ export default (history, preloadedState = {}) => {
   let middleware = [routerMiddleware(history), thunk, promise]
   if (process.env.NODE_ENV !== 'production') {
     middleware = [...middleware, createLogger()] 
+  } else {
+    middleware = [...middleware, googleAnalytics]
   }
 
   const store = createStore(createRootReducer(history), {

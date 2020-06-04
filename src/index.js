@@ -22,6 +22,9 @@ config.routes = {
 }
 
 const history = createBrowserHistory()
+
+ReactGA.initialize('UA-157445631-1')
+
 const store = configureStore(history, { config: config })
 
 const rootElement = document.getElementById('root')
@@ -35,9 +38,4 @@ ReactDom.render(
       </ThemeProvider>
     </ConnectedRouter>
   </Provider>, rootElement)
-
-if (process.env.NODE_ENV === 'production') {
-  ReactGA.initialize('UA-157445631-1')
-  ReactGA.pageview(window.location.pathname + window.location.search)
-}
 
