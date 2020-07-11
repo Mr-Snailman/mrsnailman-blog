@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
   },
   mainContent: {
+    width: '85%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing(2),
     },

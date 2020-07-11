@@ -45,7 +45,7 @@ export default () => {
       className={ classes.dungeon }
       key={ navItem.route }
       color='inherit'
-      variant='h5'
+      variant='h4'
       component={ NavLink }
       to={ navItem.route }
       { ...navItem.props }>{ navItem.title }</Typography>
@@ -73,7 +73,7 @@ export default () => {
       <Typography
         className={ classes.paypal }
         color='inherit'
-        variant='h5'>
+        variant='h4'>
         Donate
       </Typography>
     </a>,

@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     padding: theme.spacing(),
+    paddingLeft: theme.spacing(2),
   },
   mainText: {
     paddingTop: theme.spacing(2),
@@ -42,9 +43,9 @@ export default () => {
         path='/contact'
       />
       <div className={ classes.mainText }>
-        <Typography paragraph>You can reach me via my email if you have any questions, concerns, or comments:</Typography>
+        <Typography paragraph>You can reach us via my email if you have any questions, concerns, or comments:</Typography>
         <Typography paragraph>Dustin Saunders: { email }</Typography>
-        <Typography paragraph>Additionally, drop me a line on the following platforms:</Typography>
+        <Typography paragraph>Additionally, drop a line on the following platforms:</Typography>
       </div>
       <Grid container justify='center'>
         <SocialMediaIcons classes={ classes }/>

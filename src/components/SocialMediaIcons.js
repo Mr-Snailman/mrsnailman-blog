@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
   gridItem: {
     display: 'flex',
     justifyContent: 'center',
+    paddingLeft: theme.spacing(2),
   },
 }))
 export default (props) => {
