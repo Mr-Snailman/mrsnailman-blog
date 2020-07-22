@@ -22,7 +22,15 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(),
     },
-  }
+  },
+  blogImage: {
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(),
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
+  },
 }))
 
 export default (props) => {
@@ -52,7 +60,7 @@ export default (props) => {
         <Typography variant='caption'>{ blogItem.author }, { blogItem.updated }</Typography>
       </Grid>
       <Grid item xs={12} className={ classes.mainContent }>
-        { blogItem.content }
+        { blogItem.content(classes) }
       </Grid>
     </React.Fragment>
   )
