@@ -1,8 +1,8 @@
 import blogList from '../blog'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
-import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
+import CardMedia from '@material-ui/core/CardMedia'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
@@ -13,6 +13,9 @@ import { useSelector } from 'react-redux'
 const useStyles = makeStyles(theme => ({
   blogItem: {
     padding: theme.spacing(3),
+  },
+  blogBanner: {
+    height: '182px',
   },
   noContent: {
     textAlign: 'center',
@@ -37,6 +40,10 @@ const BlogListing = (props) => {
           <Grid key={ blogItem.route } item lg={4} md={6} xs={12} className={ classes.blogItem }>
             <Card>
               <CardActionArea style={{ minHeight: '200px', }} onClick={() => history.push(`${blogRoute}/${blogItem.route}`)}>
+                { blogItem.banner
+                    ? <CardMedia className={ classes.blogBanner } component='img' image={ blogItem.banner }/>
+                    : null
+                }
                 <CardHeader
                   className={ classes.cardHeader }
                   title={
@@ -59,7 +66,6 @@ const BlogListing = (props) => {
                     </React.Fragment>
                   }
                   subheader={`${blogItem.author}, ${blogItem.updated}`}/>
-                <CardContent>{ blogItem.preview }</CardContent>
               </CardActionArea>
             </Card>
           </Grid>)
