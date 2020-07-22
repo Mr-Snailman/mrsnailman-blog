@@ -4,7 +4,7 @@ import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
-import logo from '../logo.png'
+import logoSm from '../logo-sm.webp'
 import { makeStyles } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
 import { NavLink } from 'react-router-dom'
@@ -105,7 +105,7 @@ export default () => {
           </Hidden>
           { menuTypographyFunc({
               route: routes.home,
-              title: <React.Fragment><img src={ logo } width={ 32 } height={ 32 } alt='logo'/>Thoughtful Brew</React.Fragment>,
+              title: <React.Fragment><img src={ logoSm } alt='logo'/>Thoughtful Brew</React.Fragment>,
               props: { variant: 'h4' },
           })}
           <Hidden smDown>

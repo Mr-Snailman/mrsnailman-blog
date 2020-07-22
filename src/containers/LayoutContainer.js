@@ -2,7 +2,7 @@ import MainContentWrapper from '../components/MainContentWrapper'
 import NavBar from '../components/NavBar'
 import React from 'react'
 import { makeStyles, } from '@material-ui/core/styles'
-import background from '../background.jpg'
+import background from '../background.webp'
 
 const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
