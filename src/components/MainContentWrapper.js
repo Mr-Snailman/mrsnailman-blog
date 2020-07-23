@@ -4,9 +4,9 @@ import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles'
 import { MarkusSpiske } from '../components/unsplash/'
 import Paper from '@material-ui/core/Paper'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Typography from '@material-ui/core/Typography'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
@@ -38,8 +38,15 @@ export default (props) => {
   const contactUsRoute = useSelector(state => state.config.routes.contact)
   const currentRoute = useSelector(state => state.router.location)
   const history = useHistory()
+
+  const { pathname } = useLocation()
+  const mainContentRef = useRef()
+  useEffect(() => {
+    mainContentRef.current.scrollTo(0, 0)
+  }, [pathname])
+
   return (
-    <Grid container justify='center' className={ classes.grid }>
+    <Grid ref={ mainContentRef } container justify='center' className={ classes.grid }>
       <Grid item sm={12} md={10} className={ classes.gridItem }>
         <Paper className={ classes.mainPage }>
           { props.children }
