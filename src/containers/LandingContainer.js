@@ -41,7 +41,7 @@ export default () => {
       </Grid>
       <Grid container className={ classes.blogGrid }>
         <Grid item xs={12}>
-          <BlogListing blogList={ blogList.slice(0, 4) }/>
+          <BlogListing blogList={ [ ...blogList ].sort((a, b) => Date.parse(a.updated) < Date.parse(b.updated)).slice(0, 3) }/>
         </Grid>
       </Grid>
     </React.Fragment>
