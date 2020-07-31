@@ -27,9 +27,13 @@ const useStyles = makeStyles(theme => ({
   blogImage: {
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing(),
+      float: 'left',
     },
     [theme.breakpoints.down('sm')]: {
       padding: 0,
+      width: '90%',
+      height: '90%',
+      float: 'none',
     },
   },
 }))
