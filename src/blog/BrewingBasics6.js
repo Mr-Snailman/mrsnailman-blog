@@ -16,7 +16,7 @@ export default {
   title: 'Brewing Basics - Packaging',
   route: 'brewing-basics-packaging',
   author: 'Dustin Saunders',
-  updated: 'August 27, 2020',
+  updated: '2020-08-27',
   content: getContent,
   banner: packagingBanner,
   seo: 'Thoughtful Brew Article: Brewing Basics - Packaging', 

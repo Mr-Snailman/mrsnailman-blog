@@ -14,7 +14,7 @@ export default {
   title: 'Brewing Basics - Ingredients',
   route: 'brewing-basics-ingredients',
   author: 'Dustin Saunders',
-  updated: 'June 4, 2020',
+  updated: '2020-06-04',
   content: getContent,
   banner: ingredientsBanner,
   seo: 'Thoughtful Brew Article: Brewing Basics - Ingredients', 

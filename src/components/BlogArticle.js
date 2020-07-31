@@ -1,6 +1,7 @@
 import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
+import moment from 'moment'
 import React from 'react'
 import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
@@ -57,7 +58,7 @@ export default (props) => {
             </Typography>
             : null
         }
-        <Typography variant='caption'>{ blogItem.author }, { blogItem.updated }</Typography>
+        <Typography variant='caption'>{ blogItem.author }, { moment(blogItem.updated).format('MMMM Do, YYYY') }</Typography>
       </Grid>
       <Grid item xs={12} className={ classes.mainContent }>
         { blogItem.content(classes) }

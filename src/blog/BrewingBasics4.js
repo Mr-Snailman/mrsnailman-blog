@@ -15,7 +15,7 @@ export default {
   title: 'Brewing Basics - Fermentation',
   route: 'brewing-basics-fermentation',
   author: 'Dustin Saunders',
-  updated: 'July 30, 2020',
+  updated: '2020-07-30',
   content: getContent,
   banner: fermentationBanner,
   seo: 'Thoughtful Brew Article: Brewing Basics - Fermentation', 

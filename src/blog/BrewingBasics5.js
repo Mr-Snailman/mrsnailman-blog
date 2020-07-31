@@ -15,7 +15,7 @@ export default {
   title: 'Brewing Basics - Conditioning',
   route: 'brewing-basics-conditioning',
   author: 'Dustin Saunders',
-  updated: 'August 13, 2020',
+  updated: '2020-08-13',
   content: getContent,
   banner: conditioningBanner,
   seo: 'Thoughtful Brew Article: Brewing Basics - Conditioning', 

@@ -14,7 +14,7 @@ export default {
   title: 'Brewing Basics - Mashing',
   route: 'brewing-basics-mashing',
   author: 'Dustin Saunders',
-  updated: 'June 18, 2020',
+  updated: '2020-06-18',
   content: getContent,
   banner: mashingBanner,
   seo: 'Thoughtful Brew Article: Brewing Basics - Mashing', 

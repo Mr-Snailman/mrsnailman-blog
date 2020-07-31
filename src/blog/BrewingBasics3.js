@@ -15,7 +15,7 @@ export default {
   title: 'Brewing Basics - Boiling',
   route: 'brewing-basics-boiling',
   author: 'Dustin Saunders',
-  updated: 'July 2, 2020',
+  updated: '2020-07-02',
   content: getContent,
   banner: boilingBanner,
   seo: 'Thoughtful Brew Article: Brewing Basics - Boiling',

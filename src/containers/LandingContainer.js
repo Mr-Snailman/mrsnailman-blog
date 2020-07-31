@@ -2,6 +2,7 @@ import blogList from '../blog'
 import BlogListing from '../components/BlogListing'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
+import moment from 'moment'
 import React from 'react'
 import Seo from '../Seo'
 import Typography from '@material-ui/core/Typography'
@@ -41,7 +42,9 @@ export default () => {
       </Grid>
       <Grid container className={ classes.blogGrid }>
         <Grid item xs={12}>
-          <BlogListing blogList={ [ ...blogList ].sort((a, b) => Date.parse(a.updated) < Date.parse(b.updated)).slice(0, 3) }/>
+          <BlogListing blogList={ [ ...blogList ].sort((a, b) => {
+            return moment(b.updated).valueOf() - moment(a.updated).valueOf()
+          }).slice(0, 3) }/>
         </Grid>
       </Grid>
     </React.Fragment>

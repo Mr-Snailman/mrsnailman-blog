@@ -5,6 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
+import moment from 'moment'
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import { useHistory } from 'react-router-dom'
@@ -65,7 +66,7 @@ const BlogListing = (props) => {
                       }
                     </React.Fragment>
                   }
-                  subheader={`${blogItem.author}, ${blogItem.updated}`}/>
+                  subheader={`${blogItem.author}, ${moment(blogItem.updated).format('MMMM Do, YYYY')}`}/>
               </CardActionArea>
             </Card>
           </Grid>)
