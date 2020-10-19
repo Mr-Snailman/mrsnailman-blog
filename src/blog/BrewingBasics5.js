@@ -1,6 +1,5 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-// TODO: Conditioning images
 import conditioning from './conditioning.webp'
 import conditioningBanner from './conditioning-banner.webp'
 

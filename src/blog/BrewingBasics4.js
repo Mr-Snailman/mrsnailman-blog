@@ -1,6 +1,5 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-// TODO: Fermentation images
 import fermentation from './fermentation.webp'
 import fermentationBanner from './fermentation-banner.webp'
 

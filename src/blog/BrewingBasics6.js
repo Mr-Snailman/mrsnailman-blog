@@ -1,6 +1,5 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-// TODO: Packaging Images
 import packaging from './packaging.webp'
 import packagingBanner from './packaging-banner.webp'
 

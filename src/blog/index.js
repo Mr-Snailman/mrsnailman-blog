@@ -5,6 +5,8 @@ import brewingBasics4 from './BrewingBasics4'
 import brewingBasics5 from './BrewingBasics5'
 import brewingBasics6 from './BrewingBasics6'
 
+import stateOfTheBrew1 from './StateOfTheBrew1'
+
 export default [
   brewingBasics1,
   brewingBasics2,
@@ -12,5 +14,6 @@ export default [
   brewingBasics4,
   brewingBasics5,
   brewingBasics6,
+  stateOfTheBrew1,
 ]
 
