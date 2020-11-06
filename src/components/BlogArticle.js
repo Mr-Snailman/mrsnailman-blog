@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('sm')]: {
       padding: 0,
+      paddingBottom: theme.spacing(2),
       width: '90%',
       height: '90%',
       float: 'none',
