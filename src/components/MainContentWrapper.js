@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(2),
   },
   grid: {
-    paddingTop: 64,
+    paddingTop: 96,
     overflow: 'auto',
     maxHeight: '100vh',
   },

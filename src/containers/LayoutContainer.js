@@ -1,3 +1,5 @@
+import AppBar from '@material-ui/core/AppBar'
+import BlmBanner from '../components/BlmBanner'
 import MainContentWrapper from '../components/MainContentWrapper'
 import NavBar from '../components/NavBar'
 import React from 'react'
@@ -5,6 +7,9 @@ import { makeStyles, } from '@material-ui/core/styles'
 import background from '../background.webp'
 
 const useStyles = makeStyles(theme => ({
+  appBar: {
+    zIndex: 1,
+  },
   toolbar: theme.mixins.toolbar,
   root: {
     zIndex: 1,
@@ -32,7 +37,10 @@ export default (props) => {
   const classes = useStyles()
   return (
     <div className={ classes.root }>
-      <NavBar/>
+      <AppBar position='absolute' className={ classes.appBar }>
+        <BlmBanner/>
+        <NavBar/>
+      </AppBar>
       <MainContentWrapper>
         { props.children }
       </MainContentWrapper>

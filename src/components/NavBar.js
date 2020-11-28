@@ -1,4 +1,3 @@
-import AppBar from '@material-ui/core/AppBar'
 import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
@@ -15,9 +14,6 @@ import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
-  appBar: {
-    zIndex: 1
-  },
   title: {
     flexGrow: 1,
     display: 'flex',
@@ -33,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
   paypal: {
     fontFamily: 'Dungeon',
-  }
+  },
+  toolbar: {
+    minHeight: 54,
+  },
 }))
 
 export default () => {
@@ -80,43 +79,39 @@ export default () => {
   ])
 
   return (
-    <AppBar
-      position='absolute'
-      className={classes.appBar}>
-      <Toolbar>
-        <div className={ classes.title }>
-          <Hidden mdUp>
-            <IconButton onClick={ () => setNavDrawer(true) }>
-              <MenuIcon/>
-            </IconButton>
-            <Drawer open={ navDrawer } onClose={ () => setNavDrawer(false) }>
-              <List onClick={ () => setNavDrawer(false) }>
-                <ListItem>
-                  { menuTypographyFunc({
-                    route: routes.home,
-                    title: 'Home',
-                  })}
-                </ListItem>
-                { navItems.map((el, i) => 
-                  <ListItem key={ i }>{ el }</ListItem>
-                )}
-              </List>
-            </Drawer>
-          </Hidden>
-          { menuTypographyFunc({
-              route: routes.home,
-              title: <React.Fragment><img src={ logoSm } alt='logo'/>Thoughtful Brew</React.Fragment>,
-              props: { variant: 'h4' },
-          })}
-          <Hidden smDown>
-              { navItems }
-          </Hidden>
-        </div>
-        <Hidden smDown>
-          <SocialMediaIcons/>
+    <Toolbar className={ classes.toolbar }>
+      <div className={ classes.title }>
+        <Hidden mdUp>
+          <IconButton onClick={ () => setNavDrawer(true) }>
+            <MenuIcon/>
+          </IconButton>
+          <Drawer open={ navDrawer } onClose={ () => setNavDrawer(false) }>
+            <List onClick={ () => setNavDrawer(false) }>
+              <ListItem>
+                { menuTypographyFunc({
+                  route: routes.home,
+                  title: 'Home',
+                })}
+              </ListItem>
+              { navItems.map((el, i) => 
+                <ListItem key={ i }>{ el }</ListItem>
+              )}
+            </List>
+          </Drawer>
         </Hidden>
-      </Toolbar>
-    </AppBar>
+        { menuTypographyFunc({
+            route: routes.home,
+            title: <React.Fragment><img src={ logoSm } alt='logo'/>Thoughtful Brew</React.Fragment>,
+            props: { variant: 'h4' },
+        })}
+        <Hidden smDown>
+            { navItems }
+        </Hidden>
+      </div>
+      <Hidden smDown>
+        <SocialMediaIcons/>
+      </Hidden>
+    </Toolbar>
   )
 }
 
