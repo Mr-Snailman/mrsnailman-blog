@@ -55,6 +55,10 @@ export default () => {
       title: 'Blog',
     },
     {
+      route: routes.recipes,
+      title: 'Recipes',
+    },
+    {
       route: routes.about,
       title: 'About',
     },

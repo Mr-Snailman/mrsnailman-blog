@@ -19,6 +19,7 @@ config.routes = {
   blog: `${config.publicPath}blog`,
   about: `${config.publicPath}about`,
   contact: `${config.publicPath}contact`,
+  recipes: `${config.publicPath}recipes`,
 }
 
 const history = createBrowserHistory()
