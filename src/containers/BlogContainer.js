@@ -23,25 +23,23 @@ export default () => {
   const classes = useStyles()
   const blogRoute = useSelector(state => state.config.routes.blog)
   return (
-    <React.Fragment>
-      <Switch>
-        <Route exact path={ blogRoute }>
-          <Helmet>
-            <title>Thoughtful Brew - Blog</title>
-          </Helmet>
-          <Grid container justify='center'>
-            <Grid item xs={12} className={ classes.title }>
-              <Typography variant='h3' className={ classes.dungeon }>Blog Entries</Typography>
-            </Grid>
-            <BlogListing/>
+    <Switch>
+      <Route exact path={ blogRoute }>
+        <Helmet>
+          <title>Thoughtful Brew - Blog</title>
+        </Helmet>
+        <Grid container justify='center'>
+          <Grid item xs={12} className={ classes.title }>
+            <Typography variant='h3' className={ classes.dungeon }>Blog Entries</Typography>
           </Grid>
-        </Route>
-        { blogList.map(el => 
-          <Route key={ el.route } exact path={ `${blogRoute}/${el.route}` } render={() => <BlogArticle blogItem={ el }/> } />
-        )}
-        <Route path="*" component={ NoMatch }/>
-      </Switch>
-    </React.Fragment>
+          <BlogListing/>
+        </Grid>
+      </Route>
+      { blogList.map(el => 
+        <Route key={ el.route } exact path={ `${blogRoute}/${el.route}` } render={() => <BlogArticle blogItem={ el }/> } />
+      )}
+      <Route path="*" component={ NoMatch }/>
+    </Switch>
   )
 }
 

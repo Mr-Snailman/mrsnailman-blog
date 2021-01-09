@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   blmContainer: {
     color: '#DDD',
     backgroundColor: '#333',
-    padding: theme.spacing(),
+    padding: theme.spacing(0.75),
   },
   blmLink: {
     color: '#7BF',
