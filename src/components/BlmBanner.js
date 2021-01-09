@@ -10,6 +10,11 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#333',
     padding: theme.spacing(0.75),
   },
+  gridItem: {
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
+  },
   blmLink: {
     color: '#7BF',
   },
@@ -21,7 +26,7 @@ export default () => {
   const classes = useStyles()
   return (
     <Grid container className={ classes.blmContainer } justify='center'>
-      <Grid item>
+      <Grid item className={ classes.gridItem }>
         <Typography>
           Black Lives Matter. <Link
             target='_blank'
