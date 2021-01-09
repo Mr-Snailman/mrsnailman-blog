@@ -4,20 +4,15 @@ import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles'
 import { MarkusSpiske } from '../components/unsplash/'
 import Paper from '@material-ui/core/Paper'
-import React, { useEffect, useRef } from 'react'
+import { push } from 'connected-react-router'
+import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import { useHistory, useLocation } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const useStyles = makeStyles(theme => ({
   contactGrid: {
     textAlign: 'center',
     paddingBottom: theme.spacing(2),
-  },
-  grid: {
-    paddingTop: 96,
-    overflow: 'auto',
-    maxHeight: '100vh',
   },
   gridItem: {
     display: 'flex',
@@ -37,16 +32,10 @@ export default (props) => {
   const classes = useStyles()
   const contactUsRoute = useSelector(state => state.config.routes.contact)
   const currentRoute = useSelector(state => state.router.location)
-  const history = useHistory()
-
-  const { pathname } = useLocation()
-  const mainContentRef = useRef()
-  useEffect(() => {
-    mainContentRef.current.scrollTo(0, 0)
-  }, [pathname])
+  const dispatch = useDispatch()
 
   return (
-    <Grid ref={ mainContentRef } container justify='center' className={ classes.grid }>
+    <Grid container justify='center'>
       <Grid item sm={12} md={10} className={ classes.gridItem }>
         <Paper className={ classes.mainPage }>
           { props.children }
@@ -54,18 +43,18 @@ export default (props) => {
               ? <Grid container>
                 <Grid item xs={12} className={ classes.contactGrid }>
                   <Typography>Have a question or a comment?</Typography>
-                  <Button color='secondary' onClick={ () => history.push(contactUsRoute) }>Contact Us</Button>
+                  <Button color='secondary' onClick={ () => dispatch(push(contactUsRoute)) }>Contact Us</Button>
                 </Grid>
               </Grid>
               : null
           }
         </Paper>
       </Grid>
-      <Hidden smDown>
-        <Grid item sm={12} md={10} className={ classes.gridItem }>
+      <Grid item sm={12} md={10} className={ classes.gridItem }>
+        <Hidden smDown>
           <MarkusSpiske/>
-        </Grid>
-      </Hidden>
+        </Hidden>
+      </Grid>
     </Grid>
   )
 }
