@@ -17,7 +17,7 @@ export default () => {
         <Route exact path={ routes.home } component={ LandingContainer }/>
         <Route exact path={ routes.contact } component={ ContactUsContainer }/>
         <Route exact path={ routes.about } component={ AboutContainer }/>
-        <Route exact path={ routes.recipes } component={ RecipesContainer }/>
+        <Route path={ routes.recipes } component={ RecipesContainer }/>
         <Route path={ routes.blog } component={ BlogContainer }/>
         <Route path="*" component={ NoMatch }/>
       </Switch>

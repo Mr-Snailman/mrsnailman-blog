@@ -2,6 +2,9 @@ import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'
 import { makeStyles } from '@material-ui/core/styles'
 import React from 'react'
+import recipeList from '../recipes'
+import Recipe from '../components/Recipe'
+import RecipeListing from '../components/RecipeListing'
 import Typography from '@material-ui/core/Typography'
 import { useSelector } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
@@ -33,11 +36,12 @@ export default () => {
           <Grid item xs={12} className={ classes.title }>
             <Typography variant='h3' className={ classes.dungeon }>Recipes</Typography>
           </Grid>
-          <Grid>
-            <Typography>Coming Soon!</Typography>
-          </Grid>
+          <RecipeListing/>
         </Grid>
-        </Route>
+      </Route>
+      { recipeList.map(el => 
+        <Route key={ el.route } exact path={ `${recipesRoute}/${el.route}` } render={() => <Recipe recipe={ el }/> } />
+      )}
       <Route path="*" component={ NoMatch }/>
     </Switch>
   )

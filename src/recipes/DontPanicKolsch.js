@@ -1,8 +1,14 @@
 export default {
   title: 'Don\'t Panic Kolsch',
+  subTitle: 'Light colored ale; mildly hopped and lager conditioned for crispness',
+  seo: 'Thoughtful Brew Recipe: Don\'t Panic Kolsch',
   route: 'dont-panic-kolsch',
   author: 'Dustin Saunders',
   updated: '2021-01-19',
+  references: [
+    'http://howtobrew.com/book/introduction',
+    'https://www.brewinabag.com/pages/instructions',
+  ],
   details: {
     srUnit: 'Imperial',
     strikeAmount: 7,
@@ -107,6 +113,7 @@ export default {
     {
       title: 'MASH',
       step: 'Store your Mashing vessel in a heat retaining environment, whether an oven, a large insulated blanket, etc. Wait for the Mash duration.',
+    },
     {
       title: 'MASH OUT',
       step: 'Once the Mash duration has finished, retrieve your Kettle. Pull the Brew-In-A-Bag from the Kettle, ensuring to let all of the additional hot liquor to drain. Gently Squeeze the bag to release the remaining hot liquor. Discard spent grains and remove bag from Kettle completely.',
@@ -122,7 +129,7 @@ export default {
     {
       title: 'SANITIZE',
       step: 'Ensure your remaining equipment is sanitized as after the boil is when your wort is most vulnerable.',
-    }
+    },
     {
       title: 'MEASURE OG',
       step: 'Once the wort has cooled to approximately room temperature, remove the wort from the chill area. Transfer your wort to the dedicated, sanitized fermentation vessel. Take a measurement of your Original Gravity (OG) and record.',
@@ -144,10 +151,5 @@ export default {
       step: 'From here, either bottle or keg your freshly created beer. Enjoy!',
     }
   ],
-  references: [
-    'http://howtobrew.com/book/introduction',
-    'https://www.brewinabag.com/pages/instructions',
-  ],
-  seo: 'Thoughtful Brew Recipe: Don\'t Panic Kolsch',
 }
 

@@ -16,6 +16,6 @@ export const UNITS = {
 }
 
 
-export {
+export default [
   DontPanicKolsch,
-}
+]
