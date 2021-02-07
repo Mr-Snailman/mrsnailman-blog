@@ -1,6 +1,7 @@
 export default {
   title: 'Don\'t Panic Kolsch',
   subTitle: 'Light colored ale; mildly hopped and lager conditioned for crispness',
+  description: 'This light colored ale make homage to the original Kolsch style. With Glacier hops, the 2-Row Pilsner grains provide a platform to explore the process over style in this traditional brew.',
   seo: 'Thoughtful Brew Recipe: Don\'t Panic Kolsch',
   route: 'dont-panic-kolsch',
   author: 'Dustin Saunders',
@@ -68,25 +69,25 @@ export default {
   },
   ferment: {
     yeast: 'WLP001',
-    type: 'liquid',
+    type: 'White Labs: liquid yeast',
     pitchRate: 0.75,
     starter: true,
+    alternative: 'Safale US-04',
   },
   condition: {
-    dryHop: false,
-    lager: true,
-    lagerTemperature: 36,
-    lagerDuration: {
-      amount: 7,
-      unit: 'days',
+    lager: {
+      temp: 36,
+      duration: {
+        amount: 7,
+        unit: 'days',
+      },
     },
   },
   equipment: [
     'No-Rinse Sanitizer (Star San, IO Star)',
     'Cleaner (OxyClean)',
     'Full Volume Kettle',
-    'Brew-In-A-Bag',
-    'Optional: Heat Retardant Gloves',
+    'Brew-In-A-Bag (Optional, if using BIAB)',
     'Thermometer',
     'Chiller',
     'Siphon/Transfer Mechanism',
@@ -94,8 +95,9 @@ export default {
     'Graduated Cylinder',
     'Fermentation Vessel',
     'Airlock',
-    'Recommended: Cold Storage for Lagering',
     'Packaging Equipment (Bottles, Keg)',
+    'Recommended: Heat Retardant Gloves',
+    'Recommended: Cold Storage for Lagering',
   ],
   method: [
     {
