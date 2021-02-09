@@ -16,7 +16,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3),
   },
   banner: {
-    height: '182px',
+    width: '240px',
+    height: '294px',
   },
   noContent: {
     textAlign: 'center',
@@ -28,8 +29,8 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'Dungeon',
   },
   subTitle: {
-    paddingLeft: theme.spacing(8),
-    paddingRight: theme.spacing(8),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
   },
 }))
 
@@ -44,12 +45,9 @@ const RecipeListing = (props) => {
           ? props.recipeList.map(recipe => 
           <Grid key={ recipe.route } item lg={4} md={6} xs={12} className={ classes.recipe }>
             <Card>
-              <CardActionArea style={{ minHeight: '200px', }} onClick={() => history.push(`${recipesRoute}/${recipe.route}`)}>
+              <CardActionArea style={{ display: 'flex', minHeight: '200px', }} onClick={() => history.push(`${recipesRoute}/${recipe.route}`)}>
                 { recipe.banner
-                    ? <React.Fragment>
-                      { /** TODO: Banner/Img for recipes */ }
-                      <CardMedia className={ classes.banner } component='img' image={ recipe.banner }/>
-                    </React.Fragment>
+                    ? <CardMedia className={ classes.banner } component='img' image={ recipe.banner }/>
                     : null
                 }
                 <CardHeader

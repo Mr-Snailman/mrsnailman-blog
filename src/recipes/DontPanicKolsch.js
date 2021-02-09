@@ -1,7 +1,10 @@
+import banner from './dont-panic-kolsch.webp'
+
 export default {
   title: 'Don\'t Panic Kolsch',
   subTitle: 'Light colored ale; mildly hopped and lager conditioned for crispness',
   description: 'This light colored ale make homage to the original Kolsch style. With Glacier hops, the 2-Row Pilsner grains provide a platform to explore the process over style in this traditional brew.',
+  banner: banner,
   seo: 'Thoughtful Brew Recipe: Don\'t Panic Kolsch',
   route: 'dont-panic-kolsch',
   author: 'Dustin Saunders',

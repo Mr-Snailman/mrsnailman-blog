@@ -36,18 +36,9 @@ const useStyles = makeStyles(theme => ({
       textAlign: 'right',
     },
   },
-  blogImage: {
-    [theme.breakpoints.up('sm')]: {
-      padding: theme.spacing(),
-      float: 'left',
-    },
-    [theme.breakpoints.down('sm')]: {
-      padding: 0,
-      paddingBottom: theme.spacing(2),
-      width: '90%',
-      height: '90%',
-      float: 'none',
-    },
+  recipeImage: {
+    width: '100%',
+    padding: theme.spacing(),
   },
 }))
 
@@ -86,28 +77,37 @@ export default (props) => {
       <Grid item xs={12} className={ classes.mainContent }>
         <Grid container>
           <Grid item md={6} sm={12} className={ classes.gridItem }>
-            <Typography paragraph>{ recipe.description }</Typography>
-            <Typography>Recipe Type: { recipe.details.batchType }</Typography>
-            <Typography>Batch Size: { recipe.details.batchSize }{ units.batch }</Typography>
-            <Typography>Strike Water Size: { recipe.details.strikeAmount }{ units.batch }</Typography>
-            <Typography>Target Original Gravity (OG): { recipe.details.og }</Typography>
-            <Typography>Target Final Gravity (FG): { recipe.details.fg }</Typography>
-            <Typography>Target IBU: { recipe.details.ibu }</Typography>
-            <Typography>Ingredients List:
-              <List dense disablePadding>
-                { reduceIngredients(recipe.mash.grains).map((el, i) =>
-                  <ListItemText key={ i } inset>
-                    { el.amount } { units.mash } { el.name }
-                  </ListItemText>
-                )}
-                { reduceIngredients(recipe.boil.hops).map((el, i) =>
-                  <ListItemText key={ i } inset>
-                    { el.amount } { units.boil } { el.name } (~{ el.alphaAcid * 100 }% AA)
-                  </ListItemText>
-                )}
-                <ListItemText inset>Yeast: { recipe.ferment.yeast }</ListItemText>
-              </List>
-            </Typography>
+            <Grid container>
+              <Grid item lg={6} md={12}>
+                <img className={ classes.recipeImage } src={ recipe.banner } alt='Dont Panic Kolsch'/>
+              </Grid>
+              <Grid item lg={6} md={12}>
+                <Typography>Recipe Type: { recipe.details.batchType }</Typography>
+                <Typography>Batch Size: { recipe.details.batchSize }{ units.batch }</Typography>
+                <Typography>Strike Water Size: { recipe.details.strikeAmount }{ units.batch }</Typography>
+                <Typography>Target Original Gravity (OG): { recipe.details.og }</Typography>
+                <Typography>Target Final Gravity (FG): { recipe.details.fg }</Typography>
+                <Typography>Target IBU: { recipe.details.ibu }</Typography>
+                <Typography>Ingredients List:
+                  <List dense disablePadding>
+                    { reduceIngredients(recipe.mash.grains).map((el, i) =>
+                      <ListItemText key={ i } inset>
+                        { el.amount } { units.mash } { el.name }
+                      </ListItemText>
+                    )}
+                    { reduceIngredients(recipe.boil.hops).map((el, i) =>
+                      <ListItemText key={ i } inset>
+                        { el.amount } { units.boil } { el.name } (~{ el.alphaAcid * 100 }% AA)
+                      </ListItemText>
+                    )}
+                    <ListItemText inset>Yeast: { recipe.ferment.yeast }</ListItemText>
+                  </List>
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography paragraph>{ recipe.description }</Typography>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item md={6} sm={12} className={ classes.gridItem }>
             <Typography variant='h6'>Equipment</Typography>
