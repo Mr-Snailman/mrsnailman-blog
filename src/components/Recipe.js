@@ -1,5 +1,6 @@
 import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'
+import Link from '@material-ui/core/Link'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -83,11 +84,11 @@ export default (props) => {
               </Grid>
               <Grid item lg={6} md={12}>
                 <Typography>Recipe Type: { recipe.details.batchType }</Typography>
-                <Typography>Batch Size: { recipe.details.batchSize }{ units.batch }</Typography>
-                <Typography>Strike Water Size: { recipe.details.strikeAmount }{ units.batch }</Typography>
-                <Typography>Target Original Gravity (OG): { recipe.details.og }</Typography>
-                <Typography>Target Final Gravity (FG): { recipe.details.fg }</Typography>
-                <Typography>Target IBU: { recipe.details.ibu }</Typography>
+                <Typography>Batch Size: { recipe.details.batchSize } { units.batch }</Typography>
+                <Typography>Strike Water Size: { recipe.details.strikeAmount } { units.batch }</Typography>
+                <Typography>Target Original Gravity (OG): ~{ recipe.details.og }</Typography>
+                <Typography>Target Final Gravity (FG): ~{ recipe.details.fg }</Typography>
+                <Typography>Target IBU: ~{ recipe.details.ibu }</Typography>
                 <Typography>Ingredients List:
                   <List dense disablePadding>
                     { reduceIngredients(recipe.mash.grains).map((el, i) =>
@@ -147,8 +148,9 @@ export default (props) => {
             <Typography variant='h6'>Fermentation Details</Typography>
             <Typography>Yeast Strain: { recipe.ferment.yeast }</Typography>
             <Typography>{ recipe.ferment.type }</Typography>
-            <Typography>Pitch Rate: {recipe.ferment.pitchRate }</Typography>
+            <Typography>Pitch Rate: { recipe.ferment.pitchRate } M cells / mL / &deg;P</Typography>
             <Typography>Alternative: { recipe.ferment.alternative }</Typography>
+            <Typography>Temperature Range: { recipe.ferment.minTemp }&deg; { units.temperature } - { recipe.ferment.maxTemp }&deg; { units.temperature }</Typography>
           </Grid>
           <Grid item md={6} sm={12} className={ classes.gridItem }>
             <Typography variant='h6'>Conditioning Details</Typography>
@@ -186,6 +188,17 @@ export default (props) => {
               </Grid>
             </Grid>
           )}
+        </Grid>
+        <Grid item xs={12} className={ classes.gridItem }>
+          <Typography paragraph>Additional References
+            <List dense disablePadding>
+              { recipe.references.map(el =>
+                <ListItemText inset>
+                  <Link color='inherit' href={ el } target='_blank' rel='noopener'>{ el }</Link>
+                </ListItemText>
+              )}
+            </List>
+          </Typography>
         </Grid>
       </Grid>
     </React.Fragment>

@@ -15,6 +15,9 @@
     <loc>https://www.thoughtfulbrew.com/blog</loc>
   </url>
   <url>
+    <log>https://www.thoughtfulbrew.com/recipes</loc>
+  </url>
+  <url>
     <loc>https://www.thoughtfulbrew.com/blog/brewing-basics-ingredients</loc>
   </url>
   <url>
@@ -37,5 +40,8 @@
   </url>
   <url>
     <loc>https://www.thoughtfulbrew.com/blog/death-of-a-phoenix</loc>
+  </url>
+  <url>
+    <loc>https://www.thoughtfulbrew.com/recipes/dont-panic-kolsch</loc>
   </url>
 </urlset>
