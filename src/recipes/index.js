@@ -1,4 +1,5 @@
 import DontPanicKolsch from './DontPanicKolsch'
+import WestCoastPineIpa from './WestCoastPineIpa'
 
 export const UNITS = {
   'Imperial': {
@@ -18,4 +19,5 @@ export const UNITS = {
 
 export default [
   DontPanicKolsch,
+  WestCoastPineIpa,
 ]

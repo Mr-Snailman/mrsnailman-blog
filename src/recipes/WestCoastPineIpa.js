@@ -1,32 +1,31 @@
-import banner from './dont-panic-kolsch.webp'
 
 export default {
-  title: 'Don\'t Panic Kolsch',
-  subTitle: 'Light colored ale; mildly hopped and lager conditioned for crispness',
-  description: 'This light colored ale makes homage to the original Kolsch style. With Glacier hops, the 2-Row Pilsner grains provide a platform to explore the process over style in this traditional brew.',
-  banner: banner,
-  seo: 'Thoughtful Brew Recipe: Don\'t Panic Kolsch',
-  route: 'dont-panic-kolsch',
+  title: 'West Coast Pine IPA',
+  subTitle: 'Resin and Pine flavors contribute to this West Coast style IPA.',
+  description: 'Cascade and Chinook hops provide the backbone of this Wset Coast IPA style. Reminiscent of Sierra Nevada\'s successful tradition, this beer explores the Resina and Pine flavors within our favorite hops.',
+  //banner: banner,
+  seo: 'Thoughtful Brew Recipe: West Coast Pine IPA',
+  route: 'west-coast-pine-ipa',
   author: 'Dustin Saunders',
-  updated: '2021-02-11',
+  updated: '2021-02-25',
   references: [
     'http://howtobrew.com/book/introduction',
     'https://www.brewinabag.com/pages/instructions',
-    'https://byo.com/article/koelsch-style-profile/',
+    'https://www.homebrewersassociation.org/how-to-brew/10-tips-on-homebrewing-west-coast-ipa-from-beachwood-brewing/',
   ],
   details: {
     srUnit: 'Imperial',
     strikeAmount: 7,
     batchSize: 5,
     batchType: 'BIAB',
-    ibu: 22,
-    og: '1.058',
-    fg: '1.014',
-    abv: 0.051
+    ibu: 80,
+    og: '1.068',
+    fg: '1.012',
+    abv: 0.072,
   },
   mash: {
     strike: 155,
-    mash: 150,
+    mash: 149,
     duration: {
       amount: 60,
       unit: 'mins',
@@ -39,10 +38,16 @@ export default {
         ppg: 32,
       },
       {
-        name: 'Carapils',
+        name: 'Munich',
         type: 'Grain',
         amount: 1,
-        ppg: 28,
+        ppg: 30,
+      },
+      {
+        name: 'Melanoidin',
+        type: 'Grain',
+        amount: 1,
+        ppg: 32,
       },
     ],
   },
@@ -53,42 +58,71 @@ export default {
     },
     hops: [
       {
-        name: 'Glacier',
-        alphaAcid: 0.051,
-        amount: 1,
+        name: 'Cascade',
+        alphaAcid: 0.071,
+        amount: 1.85,
         schedule: {
           amount: 60,
           unit: 'mins',
         },
       },
       {
-        name: 'Glacier',
-        alphaAcid: 0.051,
-        amount: 1,
+        name: 'Chinook',
+        alphaAcid: 0.115,
+        amount: 0.55,
+        schedule: {
+          amount: 45,
+          unit: 'mins',
+        },
+      },
+      {
+        name: 'Chinook',
+        alphaAcid: 0.115,
+        amount: 1.2,
         schedule: {
           amount: 15,
+          unit: 'mins',
+        },
+      },
+      {
+        name: 'Cascade',
+        alphaAcid: 0.071,
+        amount: 1,
+        schedule: {
+          amount: 5,
           unit: 'mins',
         },
       },
     ],
   },
   ferment: {
-    yeast: 'WLP029',
+    yeast: 'WLP001',
     type: 'White Labs: liquid yeast',
     pitchRate: 0.75,
     starter: true,
     alternative: 'Safale US-04',
-    maxTemp: 68,
-    minTemp: 60,
+    maxTemp: 72,
+    minTemp: 68,
   },
   condition: {
-    lager: {
-      temp: 36,
+    dryHop: {
       duration: {
         amount: 7,
         unit: 'days',
       },
-    },
+      hops: [
+      {
+        name: 'Chinook',
+        alphaAcid: 0.115,
+        amount: 2,
+      },
+      {
+        name: 'Cascade',
+        alphaAcid: 0.071,
+        amount: 1,
+      },
+      ],
+    }
   },
   equipment: [
     'No-Rinse Sanitizer (Star San, IO Star)',
@@ -104,7 +138,7 @@ export default {
     'Airlock',
     'Packaging Equipment (Bottles, Keg)',
     'Recommended: Heat Retardant Gloves',
-    'Recommended: Cold Storage for Lagering',
+    'Recommended: Secondary Racking Vessel',
   ],
   method: [
     {
@@ -152,8 +186,8 @@ export default {
       step: 'Once fermentation has seemed to stop (no airlock activity), take a sample to measure your Final Gravity (FG). If your measurement is not as low as expected, continue to be patient as your yeast may not be complete with fermentation. After 24-48 hours, measure your FG again.',
     },
     {
-      title: 'CONDITION: LAGER',
-      step: 'Optionally, move your fermented beer to a secondary vessel (secondary racking). From here, place your beer in cold storage at the appropriate Lagering temperature for the duration.',
+      title: 'CONDITION: DRY HOP',
+      step: 'Optionally, move your fermented beer to a secondary vessel (secondary racking). Add the hops within the dry hop section to the secondary vessel for the scheduled time. This provides aromatic qualities from the hops to the beer with increasing the IBUs of the beer.',
     },
     {
       title: 'PACKAGE',

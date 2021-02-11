@@ -2,7 +2,6 @@ import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'
 import Link from '@material-ui/core/Link'
 import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import { makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
@@ -80,7 +79,7 @@ export default (props) => {
           <Grid item md={6} sm={12} className={ classes.gridItem }>
             <Grid container>
               <Grid item lg={6} md={12}>
-                <img className={ classes.recipeImage } src={ recipe.banner } alt='Dont Panic Kolsch'/>
+                <img className={ classes.recipeImage } src={ recipe.banner } alt={ recipe.title }/>
               </Grid>
               <Grid item lg={6} md={12}>
                 <Typography>Recipe Type: { recipe.details.batchType }</Typography>
@@ -88,6 +87,7 @@ export default (props) => {
                 <Typography>Strike Water Size: { recipe.details.strikeAmount } { units.batch }</Typography>
                 <Typography>Target Original Gravity (OG): ~{ recipe.details.og }</Typography>
                 <Typography>Target Final Gravity (FG): ~{ recipe.details.fg }</Typography>
+                <Typography>Target ABV: ~{ (recipe.details.abv * 100).toFixed(2) }%</Typography>
                 <Typography>Target IBU: ~{ recipe.details.ibu }</Typography>
                 <Typography>Ingredients List:
                   <List dense disablePadding>
@@ -98,7 +98,7 @@ export default (props) => {
                     )}
                     { reduceIngredients(recipe.boil.hops).map((el, i) =>
                       <ListItemText key={ i } inset>
-                        { el.amount } { units.boil } { el.name } (~{ el.alphaAcid * 100 }% AA)
+                        { el.amount } { units.boil } { el.name } (~{ (el.alphaAcid * 100).toFixed(2) }% AA)
                       </ListItemText>
                     )}
                     <ListItemText inset>Yeast: { recipe.ferment.yeast }</ListItemText>
@@ -138,7 +138,7 @@ export default (props) => {
               <List dense disablePadding>
                 { recipe.boil.hops.map((el, i) => 
                   <ListItemText key={ i } inset>
-                    { el.schedule.amount } { el.schedule.unit }: { el.amount } { units.boil } { el.name } (~{ el.alphaAcid * 100 }% AA)
+                    { el.schedule.amount } { el.schedule.unit }: { el.amount } { units.boil } { el.name } (~{ (el.alphaAcid * 100).toFixed(2) }% AA)
                   </ListItemText>
                 )}
               </List>
@@ -155,7 +155,13 @@ export default (props) => {
           <Grid item md={6} sm={12} className={ classes.gridItem }>
             <Typography variant='h6'>Conditioning Details</Typography>
             { recipe.condition.dryHop
-                ? <Typography>Dry Hop: </Typography>
+                ? <Typography paragraph>Dry Hop ({ recipe.condition.dryHop.duration.amount } { recipe.condition.dryHop.duration.unit }):
+                  <List dense disablePadding>
+                    { recipe.condition.dryHop.hops.map(el =>
+                      <ListItemText inset>{ el.amount } { units.boil } { el.name } (~{ (el.alphaAcid * 100).toFixed(2) }% AA)</ListItemText>
+                    )}
+                  </List>
+                </Typography>
                 : null
             }
             { recipe.condition.lager
