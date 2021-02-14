@@ -61,7 +61,7 @@ export default {
       {
         name: 'Cascade',
         alphaAcid: 0.071,
-        amount: 1.85,
+        amount: 1.75,
         schedule: {
           amount: 60,
           unit: 'mins',
@@ -70,7 +70,7 @@ export default {
       {
         name: 'Chinook',
         alphaAcid: 0.115,
-        amount: 0.55,
+        amount: 0.5,
         schedule: {
           amount: 45,
           unit: 'mins',
@@ -79,7 +79,7 @@ export default {
       {
         name: 'Chinook',
         alphaAcid: 0.115,
-        amount: 1.2,
+        amount: 1.25,
         schedule: {
           amount: 15,
           unit: 'mins',

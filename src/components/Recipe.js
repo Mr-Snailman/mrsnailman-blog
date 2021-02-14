@@ -1,3 +1,4 @@
+import { cloneDeep } from 'lodash'
 import Grid from '@material-ui/core/Grid'
 import { Helmet } from 'react-helmet'
 import Link from '@material-ui/core/Link'
@@ -42,11 +43,14 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+const renderHopDetails = (hop, units) =>
+  `${hop.amount} ${units.boil} ${hop.name} (~${(hop.alphaAcid * 100).toFixed(2)}% AA)`
+
 /**
  * Reduce ingredients list from Mash/Boil schedule to total amount
  * of each ingredient by name. Match by name and add amounts.
  */
-const reduceIngredients = (values) => values.reduce((acc, value) => {
+const reduceIngredients = (values) => cloneDeep(values).reduce((acc, value) => {
   const currValue = acc.find(el => value.name === el.name);
   if (currValue) {
     currValue.amount += value.amount
@@ -96,10 +100,8 @@ export default (props) => {
                         { el.amount } { units.mash } { el.name }
                       </ListItemText>
                     )}
-                    { reduceIngredients(recipe.boil.hops).map((el, i) =>
-                      <ListItemText key={ i } inset>
-                        { el.amount } { units.boil } { el.name } (~{ (el.alphaAcid * 100).toFixed(2) }% AA)
-                      </ListItemText>
+                    { reduceIngredients(recipe.boil.hops.concat(recipe.condition.dryHop ? recipe.condition.dryHop.hops : [])).map((el, i) =>
+                      <ListItemText key={ i } inset>{ renderHopDetails(el, units) }</ListItemText>
                     )}
                     <ListItemText inset>Yeast: { recipe.ferment.yeast }</ListItemText>
                   </List>
@@ -138,7 +140,7 @@ export default (props) => {
               <List dense disablePadding>
                 { recipe.boil.hops.map((el, i) => 
                   <ListItemText key={ i } inset>
-                    { el.schedule.amount } { el.schedule.unit }: { el.amount } { units.boil } { el.name } (~{ (el.alphaAcid * 100).toFixed(2) }% AA)
+                    { el.schedule.amount } { el.schedule.unit }: { renderHopDetails(el, units) }
                   </ListItemText>
                 )}
               </List>
@@ -158,7 +160,7 @@ export default (props) => {
                 ? <Typography paragraph>Dry Hop ({ recipe.condition.dryHop.duration.amount } { recipe.condition.dryHop.duration.unit }):
                   <List dense disablePadding>
                     { recipe.condition.dryHop.hops.map(el =>
-                      <ListItemText inset>{ el.amount } { units.boil } { el.name } (~{ (el.alphaAcid * 100).toFixed(2) }% AA)</ListItemText>
+                      <ListItemText inset>{ renderHopDetails(el, units) }</ListItemText>
                     )}
                   </List>
                 </Typography>
