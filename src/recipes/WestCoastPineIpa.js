@@ -1,9 +1,10 @@
+import banner from './west-coast-pine-ipa.webp'
 
 export default {
   title: 'West Coast Pine IPA',
   subTitle: 'Resin and Pine flavors contribute to this West Coast style IPA.',
   description: 'Cascade and Chinook hops provide the backbone of this Wset Coast IPA style. Reminiscent of Sierra Nevada\'s successful tradition, this beer explores the Resina and Pine flavors within our favorite hops.',
-  //banner: banner,
+  banner: banner,
   seo: 'Thoughtful Brew Recipe: West Coast Pine IPA',
   route: 'west-coast-pine-ipa',
   author: 'Dustin Saunders',
