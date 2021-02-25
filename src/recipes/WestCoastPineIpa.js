@@ -188,7 +188,7 @@ export default {
     },
     {
       title: 'CONDITION: DRY HOP',
-      step: 'Optionally, move your fermented beer to a secondary vessel (secondary racking). Add the hops within the dry hop section to the secondary vessel for the scheduled time. This provides aromatic qualities from the hops to the beer with increasing the IBUs of the beer.',
+      step: 'Optionally, move your fermented beer to a secondary vessel (secondary racking). Add the hops within the dry hop section to the secondary vessel for the scheduled time. This provides aromatic qualities from the hops to the beer without increasing the IBUs of the beer.',
     },
     {
       title: 'PACKAGE',
