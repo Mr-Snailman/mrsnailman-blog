@@ -8,12 +8,14 @@ export const UNITS = {
     batch: 'gal',
     mash: 'lb',
     boil: 'oz',
+    water: 'ppm',
   },
   'Metric': {
     temperature: 'C',
     batch: 'L',
     mash: 'kg',
     boil: 'g',
+    water: 'ppm',
   },
 }
 

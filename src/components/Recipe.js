@@ -120,18 +120,33 @@ export default (props) => {
           </Grid>
           <Grid item md={6} sm={12} className={ classes.gridItem }>
             <Typography variant='h6'>Mash Details</Typography>
-            <Typography>Target Strike Temp: { recipe.mash.strike }&deg; { units.temperature }</Typography>
-            <Typography>Target Mash Temp: { recipe.mash.mash }&deg; { units.temperature }</Typography>
-            <Typography>Boil Time: { recipe.mash.duration.amount } { recipe.mash.duration.unit }</Typography>
-            <Typography paragraph>Grains:
-              <List dense disablePadding>
-                { recipe.mash.grains.map((el, i) =>
-                  <ListItemText key={ i } inset>
-                    { el.amount } { units.mash } { el.name } (~{ el.ppg } ppg)
-                  </ListItemText>
-                )}
-              </List>
-            </Typography>
+            <Grid container>
+              <Grid item lg={12} xl={6}>
+                <Typography>Target Strike Temp: { recipe.mash.strike }&deg; { units.temperature }</Typography>
+                <Typography>Target Mash Temp: { recipe.mash.mash }&deg; { units.temperature }</Typography>
+                <Typography>Boil Time: { recipe.mash.duration.amount } { recipe.mash.duration.unit }</Typography>
+                <Typography paragraph>Grains:
+                  <List dense disablePadding>
+                    { recipe.mash.grains.map((el, i) =>
+                      <ListItemText key={ i } inset>
+                        { el.amount } { units.mash } { el.name } (~{ el.ppg } ppg)
+                      </ListItemText>
+                    )}
+                  </List>
+                </Typography>
+              </Grid>
+              <Grid item lg={12} xl={6}>
+                <Typography paragraph>Water Chemistry:
+                  <List dense disablePadding>
+                    { recipe.mash.waterAdditions.map((el, i) =>
+                      <ListItemText key={ i } inset>
+                        { el.amount } { units.water } { el.name } 
+                      </ListItemText>
+                    )}
+                  </List>
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item md={6} sm={12} className={ classes.gridItem }>
             <Typography variant='h6'>Boil Details</Typography>

@@ -1,3 +1,4 @@
+import React from 'react'
 import banner from './west-coast-pine-ipa.webp'
 
 export default {
@@ -49,6 +50,32 @@ export default {
         type: 'Grain',
         amount: 1,
         ppg: 32,
+      },
+    ],
+    waterAdditions: [
+      {
+        name: <span>Calcium (Ca<sup>+2</sup>)</span>,
+        amount: 60,
+      },
+      {
+        name: <span>Magnesium (Mg<sup>+2</sup>)</span>,
+        amount: 5,
+      },
+      {
+        name: <span>Sulfate (SO<sub>4</sub><sup>-2</sup>)</span>,
+        amount: 120,
+      },
+      {
+        name: <span>Sodium (Na<sup>+</sup>)</span>,
+        amount: 15,
+      },
+      {
+        name: <span>Chloride (Cl<sup>-</sup>)</span>,
+        amount: 40,
+      },
+      {
+        name: <span>Bicarbonate (HCO<sub>3</sub><sup>-</sup>)</span>,
+        amount: 35,
       },
     ],
   },

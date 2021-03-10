@@ -1,3 +1,4 @@
+import React from 'react'
 import banner from './mocktoberfest.webp'
 
 export default {
@@ -13,6 +14,7 @@ export default {
     'http://howtobrew.com/book/introduction',
     'https://www.brewinabag.com/pages/instructions',
     'https://beerandbrewing.com/mocktoberfest/',
+    'https://www.brewersfriend.com/water-chemistry/',
   ],
   details: {
     srUnit: 'Imperial',
@@ -31,6 +33,32 @@ export default {
       amount: 60,
       unit: 'mins',
     },
+    waterAdditions: [
+      {
+        name: <span>Calcium (Ca<sup>+2</sup>)</span>,
+        amount: 50,
+      },
+      {
+        name: <span>Magnesium (Mg<sup>+2</sup>)</span>,
+        amount: 5,
+      },
+      {
+        name: <span>Sulfate (SO<sub>4</sub><sup>-2</sup>)</span>,
+        amount: 55,
+      },
+      {
+        name: <span>Sodium (Na<sup>+</sup>)</span>,
+        amount: 15,
+      },
+      {
+        name: <span>Chloride (Cl<sup>-</sup>)</span>,
+        amount: 65,
+      },
+      {
+        name: <span>Bicarbonate (HCO<sub>3</sub><sup>-</sup>)</span>,
+        amount: 100,
+      },
+    ],
     grains: [
       {
         name: '2 Row',
