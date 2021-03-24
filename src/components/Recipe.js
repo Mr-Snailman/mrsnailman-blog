@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const renderHopDetails = (hop, units) =>
-  `${hop.amount} ${units.boil} ${hop.name} (~${(hop.alphaAcid * 100).toFixed(2)}% AA)`
+  `${hop.amount} ${units.boil} ${hop.name} ${ hop.alphaAcid ? `(~${(hop.alphaAcid * 100).toFixed(2)}% AA)` : ''}`
 
 /**
  * Reduce ingredients list from Mash/Boil schedule to total amount

@@ -1,33 +1,32 @@
-import React from 'react'
-import banner from './west-coast-pine-ipa.webp'
+import banner from './citra-coffee-stout.webp'
 
 export default {
-  title: 'West Coast Pine IPA',
-  subTitle: 'Resin and Pine flavors contribute to this West Coast style IPA.',
-  description: 'Cascade and Chinook hops provide the backbone of this Wset Coast IPA style. Reminiscent of Sierra Nevada\'s successful tradition, this beer explores the Resina and Pine flavors within our favorite hops.',
+  title: 'Citra Coffee Stout',
+  subTitle: 'Breakfast stout with my favorite breakfast ingredients: Coffee and Oranges!',
+  description: 'Modeling my favorite breakfast into a beer, this stout takes roasted barley, a cup of coffee, and Citra hops for a roasty, citrus stout!',
   banner: banner,
-  seo: 'Thoughtful Brew Recipe: West Coast Pine IPA',
-  route: 'west-coast-pine-ipa',
+  seo: 'Thoughtful Brew Recipe: Citra Coffee Stout',
+  route: 'citra-coffee-stout',
   author: 'Dustin Saunders',
-  updated: '2021-02-25',
+  updated: '2021-03-25',
   references: [
     'http://howtobrew.com/book/introduction',
     'https://www.brewinabag.com/pages/instructions',
-    'https://www.homebrewersassociation.org/how-to-brew/10-tips-on-homebrewing-west-coast-ipa-from-beachwood-brewing/',
+    'https://byo.com/article/american-stout-style-profile/',
   ],
   details: {
     srUnit: 'Imperial',
     strikeAmount: 7,
     batchSize: 5,
     batchType: 'BIAB',
-    ibu: 70,
-    og: '1.068',
-    fg: '1.012',
-    abv: 0.072,
+    ibu: 35,
+    og: '1.047',
+    fg: '1.008',
+    abv: 0.05,
   },
   mash: {
-    strike: 155,
-    mash: 149,
+    strike: 157,
+    mash: 151,
     duration: {
       amount: 60,
       unit: 'mins',
@@ -36,48 +35,29 @@ export default {
       {
         name: '2 Row',
         type: 'Grain',
-        amount: 10.5,
+        amount: 8.5,
         ppg: 32,
       },
       {
-        name: 'Munich',
+        name: 'Roasted Barley',
         type: 'Grain',
-        amount: 1,
-        ppg: 30,
+        amount: 0.5,
+        ppg: 21,
       },
       {
-        name: 'Melanoidin',
+        name: 'Flaked Barley',
         type: 'Grain',
-        amount: 1,
-        ppg: 32,
+        amount: 0.5,
+        ppg: 28,
+      },
+      {
+        name: 'Crystal 60L',
+        type: 'Grain',
+        amount: 0.5,
+        ppg: 29,
       },
     ],
-    waterAdditions: [
-      {
-        name: <span>Calcium (Ca<sup>+2</sup>)</span>,
-        amount: 60,
-      },
-      {
-        name: <span>Magnesium (Mg<sup>+2</sup>)</span>,
-        amount: 5,
-      },
-      {
-        name: <span>Sulfate (SO<sub>4</sub><sup>-2</sup>)</span>,
-        amount: 120,
-      },
-      {
-        name: <span>Sodium (Na<sup>+</sup>)</span>,
-        amount: 15,
-      },
-      {
-        name: <span>Chloride (Cl<sup>-</sup>)</span>,
-        amount: 40,
-      },
-      {
-        name: <span>Bicarbonate (HCO<sub>3</sub><sup>-</sup>)</span>,
-        amount: 35,
-      },
-    ],
+    waterAdditions: [],
   },
   boil: {
     duration: {
@@ -86,36 +66,18 @@ export default {
     },
     hops: [
       {
-        name: 'Cascade',
-        alphaAcid: 0.05,
-        amount: 1.75,
+        name: 'Willamette',
+        alphaAcid: 0.042,
+        amount: 1,
         schedule: {
           amount: 60,
           unit: 'mins',
         },
       },
       {
-        name: 'Chinook',
-        alphaAcid: 0.115,
-        amount: 0.5,
-        schedule: {
-          amount: 45,
-          unit: 'mins',
-        },
-      },
-      {
-        name: 'Chinook',
-        alphaAcid: 0.115,
-        amount: 1.25,
-        schedule: {
-          amount: 15,
-          unit: 'mins',
-        },
-      },
-      {
-        name: 'Cascade',
-        alphaAcid: 0.05,
-        amount: 1,
+        name: 'Citra',
+        alphaAcid: 0.128,
+        amount: 2,
         schedule: {
           amount: 5,
           unit: 'mins',
@@ -124,13 +86,13 @@ export default {
     ],
   },
   ferment: {
-    yeast: 'WLP001',
+    yeast: 'WLP004',
     type: 'White Labs: liquid yeast',
     pitchRate: 0.75,
     starter: true,
-    alternative: 'Safale US-04',
+    alternative: 'Safale S-04',
     maxTemp: 72,
-    minTemp: 68,
+    minTemp: 65,
   },
   condition: {
     dryHop: {
@@ -139,16 +101,15 @@ export default {
         unit: 'days',
       },
       hops: [
-      {
-        name: 'Chinook',
-        alphaAcid: 0.115,
-        amount: 2,
-      },
-      {
-        name: 'Cascade',
-        alphaAcid: 0.071,
-        amount: 1,
-      },
+        {
+          name: 'Citra',
+          alphaAcid: 0.128,
+          amount: 1,
+        },
+        {
+          name: 'Cup of Your Favorite Coffee',
+          amount: 8,
+        },
       ],
     }
   },

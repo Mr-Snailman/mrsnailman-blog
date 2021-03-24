@@ -1,3 +1,4 @@
+import CitraCoffeeStout from './CitraCoffeeStout'
 import DontPanicKolsch from './DontPanicKolsch'
 import WestCoastPineIpa from './WestCoastPineIpa'
 import Mocktoberfest from './Mocktoberfest'
@@ -21,6 +22,7 @@ export const UNITS = {
 
 
 export default [
+  CitraCoffeeStout,
   DontPanicKolsch,
   WestCoastPineIpa,
   Mocktoberfest,
