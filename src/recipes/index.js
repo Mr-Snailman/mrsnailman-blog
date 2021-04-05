@@ -1,7 +1,8 @@
 import CitraCoffeeStout from './CitraCoffeeStout'
 import DontPanicKolsch from './DontPanicKolsch'
-import WestCoastPineIpa from './WestCoastPineIpa'
 import Mocktoberfest from './Mocktoberfest'
+import ThaiChileChocolateStout from './ThaiChileChocolateStout'
+import WestCoastPineIpa from './WestCoastPineIpa'
 
 export const UNITS = {
   'Imperial': {
@@ -20,10 +21,11 @@ export const UNITS = {
   },
 }
 
-
+// Order is important!
 export default [
-  CitraCoffeeStout,
   DontPanicKolsch,
   WestCoastPineIpa,
   Mocktoberfest,
+  CitraCoffeeStout,
+  ThaiChileChocolateStout,
 ]
