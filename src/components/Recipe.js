@@ -135,17 +135,20 @@ export default (props) => {
                   </List>
                 </Typography>
               </Grid>
-              <Grid item lg={12} xl={6}>
-                <Typography paragraph>Water Chemistry:
-                  <List dense disablePadding>
-                    { recipe.mash.waterAdditions.map((el, i) =>
-                      <ListItemText key={ i } inset>
-                        { el.amount } { units.water } { el.name } 
-                      </ListItemText>
-                    )}
-                  </List>
-                </Typography>
-              </Grid>
+              { recipe.mash.waterAdditions
+                  ? <Grid item lg={12} xl={6}>
+                    <Typography paragraph>Water Chemistry:
+                      <List dense disablePadding>
+                        { recipe.mash.waterAdditions.map((el, i) =>
+                          <ListItemText key={ i } inset>
+                            { el.amount } { units.water } { el.name } 
+                          </ListItemText>
+                        )}
+                      </List>
+                    </Typography>
+                  </Grid>
+                  : null
+              }
             </Grid>
           </Grid>
           <Grid item md={6} sm={12} className={ classes.gridItem }>

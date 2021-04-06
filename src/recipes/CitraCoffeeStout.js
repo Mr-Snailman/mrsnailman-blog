@@ -57,7 +57,6 @@ export default {
         ppg: 29,
       },
     ],
-    waterAdditions: [],
   },
   boil: {
     duration: {
