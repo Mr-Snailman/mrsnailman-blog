@@ -100,7 +100,7 @@ export default (props) => {
                         { el.amount } { units.mash } { el.name }
                       </ListItemText>
                     )}
-                    { reduceIngredients(recipe.boil.hops.concat(recipe.condition.dryHop ? recipe.condition.dryHop.hops : [])).map((el, i) =>
+                    { reduceIngredients(recipe.boil.hops.concat(recipe.condition?.dryHop ? recipe.condition.dryHop.hops : [])).map((el, i) =>
                       <ListItemText key={ i } inset>{ renderHopDetails(el, units) }</ListItemText>
                     )}
                     <ListItemText inset>Yeast: { recipe.ferment.yeast }</ListItemText>
@@ -172,34 +172,37 @@ export default (props) => {
             <Typography>Alternative: { recipe.ferment.alternative }</Typography>
             <Typography>Temperature Range: { recipe.ferment.minTemp }&deg; { units.temperature } - { recipe.ferment.maxTemp }&deg; { units.temperature }</Typography>
           </Grid>
-          <Grid item md={6} sm={12} className={ classes.gridItem }>
-            <Typography variant='h6'>Conditioning Details</Typography>
-            { recipe.condition.dryHop
-                ? <Typography paragraph>Dry Hop ({ recipe.condition.dryHop.duration.amount } { recipe.condition.dryHop.duration.unit }):
-                  <List dense disablePadding>
-                    { recipe.condition.dryHop.hops.map(el =>
-                      <ListItemText inset>{ renderHopDetails(el, units) }</ListItemText>
-                    )}
-                  </List>
-                </Typography>
-                : null
-            }
-            { recipe.condition.lager
-                ? <React.Fragment>
-                  <Typography paragraph>Lager Cold Condition
-                    <List dense disablePadding>
-                      <ListItemText inset>
-                        Temperature: { recipe.condition.lager.temp }&deg; { units.temperature }
-                      </ListItemText>
-                      <ListItemText inset>
-                        Time: { recipe.condition.lager.duration.amount } { recipe.condition.lager.duration.unit }
-                      </ListItemText>
-                    </List>
-                  </Typography>
-                </React.Fragment>
-                : null
-            }
-          </Grid>
+          { recipe.condition
+              ? <Grid item md={6} sm={12} className={ classes.gridItem }>
+                <Typography variant='h6'>Conditioning Details</Typography>
+                { recipe.condition.dryHop
+                    ? <Typography paragraph>Dry Hop ({ recipe.condition.dryHop.duration.amount } { recipe.condition.dryHop.duration.unit }):
+                      <List dense disablePadding>
+                        { recipe.condition.dryHop.hops.map(el =>
+                          <ListItemText inset>{ renderHopDetails(el, units) }</ListItemText>
+                        )}
+                      </List>
+                    </Typography>
+                    : null
+                }
+                { recipe.condition.lager
+                    ? <React.Fragment>
+                      <Typography paragraph>Lager Cold Condition
+                        <List dense disablePadding>
+                          <ListItemText inset>
+                            Temperature: { recipe.condition.lager.temp }&deg; { units.temperature }
+                          </ListItemText>
+                          <ListItemText inset>
+                            Time: { recipe.condition.lager.duration.amount } { recipe.condition.lager.duration.unit }
+                          </ListItemText>
+                        </List>
+                      </Typography>
+                    </React.Fragment>
+                    : null
+                }
+              </Grid>
+              : null
+          }
         </Grid>
         <Grid item xs={12} className={ classes.gridItem }>
           <Typography variant='h6'>Method</Typography>
