@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   actionArea: {
     minHeight: 200,
     display: props => props.display, 
+    justifyContent: 'start',
   },
   articleBanner: {
     width: props => props.width || null,
@@ -38,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const ArticleListing = (props) => {
-  const { articleList, routeBaseSelector } = props
+  const { articleList, breakpoints, routeBaseSelector } = props
   const articleRouteBase = useSelector(routeBaseSelector)
   const classes = useStyles(props)
   const history = useHistory()
@@ -47,7 +48,7 @@ const ArticleListing = (props) => {
     <Grid container>
       { articleList && articleList.length > 0
           ? articleList.map(articleItem => 
-          <Grid key={ articleItem.route } item lg={4} md={6} xs={12} className={ classes.articleItem }>
+          <Grid key={ articleItem.route } item { ...breakpoints } className={ classes.articleItem }>
             <Card>
               <CardActionArea
                 className={ classes.actionArea }
@@ -97,6 +98,11 @@ ArticleListing.defaultProps = {
   routeBaseSelector: state => state.config.routes.home,
   height: 182,
   display: 'block',
+  breakpoints: {
+    lg: 4,
+    md: 6, 
+    xs: 12,
+  },
 }
 
 export default ArticleListing

@@ -9,7 +9,8 @@ const RecipeListing = (props) => {
       articleList={ props.recipeList }
       height={ 294 }
       width={ 240 }
-      display='flex' />
+      display='flex'
+      breakpoints={{ xl: 4, lg: 6, md: 12 }}/>
   )
 }
 

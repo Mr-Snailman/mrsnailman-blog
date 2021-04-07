@@ -3,7 +3,7 @@ import banner from './thai-chile-chocolate-stout.webp'
 export default {
   title: 'Thai Chile Chocolate Stout',
   subTitle: 'Chocolate-flavored heart warmer!',
-  description: 'This Chocolate Stout uses the Roasted Malt as a base to build heat of Thai Chiles into a crescendo of flavor. Take care with this one, it can be a doosy!',
+  description: 'This Chocolate Stout uses Roasted Malt as a base to build the heat of Thai Chiles into a crescendo of flavor. Take care with this one, it can be a doosy!',
   banner: banner,
   seo: 'Thoughtful Brew Recipe: Thai Chile Chocolate Stout',
   route: 'thai-chile-chocolate-stout',
