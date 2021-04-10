@@ -1,3 +1,4 @@
+import React from 'react'
 import banner from './citra-coffee-stout.webp'
 
 export default {
@@ -55,6 +56,32 @@ export default {
         type: 'Grain',
         amount: 0.5,
         ppg: 29,
+      },
+    ],
+    waterAdditions: [
+      {
+        name: <span>Calcium (Ca<sup>+2</sup>)</span>,
+        amount: 110,
+      },
+      {
+        name: <span>Magnesium (Mg<sup>+2</sup>)</span>,
+        amount: 4,
+      },
+      {
+        name: <span>Sulfate (SO<sub>4</sub><sup>-2</sup>)</span>,
+        amount: 50,
+      },
+      {
+        name: <span>Sodium (Na<sup>+</sup>)</span>,
+        amount: 10,
+      },
+      {
+        name: <span>Chloride (Cl<sup>-</sup>)</span>,
+        amount: 50,
+      },
+      {
+        name: <span>Bicarbonate (HCO<sub>3</sub><sup>-</sup>)</span>,
+        amount: 280,
       },
     ],
   },
