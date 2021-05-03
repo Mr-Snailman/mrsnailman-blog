@@ -1,3 +1,4 @@
+import BoyleCheer from './BoyleCheer'
 import CitraCoffeeStout from './CitraCoffeeStout'
 import DontPanicKolsch from './DontPanicKolsch'
 import Mocktoberfest from './Mocktoberfest'
@@ -28,4 +29,5 @@ export default [
   Mocktoberfest,
   CitraCoffeeStout,
   ThaiChileChocolateStout,
+  BoyleCheer,
 ]
