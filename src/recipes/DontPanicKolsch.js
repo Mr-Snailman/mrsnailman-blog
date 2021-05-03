@@ -1,4 +1,5 @@
 import banner from './dont-panic-kolsch.webp'
+import React from 'react'
 
 export default {
   title: 'Don\'t Panic Kolsch',
@@ -43,6 +44,32 @@ export default {
         type: 'Grain',
         amount: 1,
         ppg: 28,
+      },
+    ],
+    waterAdditions: [
+      {
+        name: <span>Calcium (Ca<sup>+2</sup>)</span>,
+        amount: 50,
+      },
+      {
+        name: <span>Magnesium (Mg<sup>+2</sup>)</span>,
+        amount: 10,
+      },
+      {
+        name: <span>Sulfate (SO<sub>4</sub><sup>-2</sup>)</span>,
+        amount: 70,
+      },
+      {
+        name: <span>Sodium (Na<sup>+</sup>)</span>,
+        amount: 16,
+      },
+      {
+        name: <span>Chloride (Cl<sup>-</sup>)</span>,
+        amount: 70,
+      },
+      {
+        name: <span>Bicarbonate (HCO<sub>3</sub><sup>-</sup>)</span>,
+        amount: 0,
       },
     ],
   },
