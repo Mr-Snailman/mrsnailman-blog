@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.1.14",
+  "version": "2.1.15-beta",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.8.3",
