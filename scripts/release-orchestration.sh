@@ -6,5 +6,4 @@ if [ $# -ne 2 ]; then
 fi
 
 ./scripts/prepare-release.sh $1
-./scripts/local-deploy.sh
 ./scripts/prepare-dev.sh "$2-beta"
