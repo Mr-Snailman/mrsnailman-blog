@@ -1,5 +1,4 @@
 import banner from './boyle-cheer.webp'
-import React from 'react'
 
 export default {
   title: 'Boyle Cheer',

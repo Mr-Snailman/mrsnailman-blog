@@ -14,51 +14,65 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(2),
   },
 }))
-export default (props) => {
+
+// TODO: Turn Social Media on
+const Facebook = props =>
+  <Grid item className={ props.classes.gridItem }>
+    <a
+      href='https://www.facebook.com/thoughtfulbrew/'
+      target='_blank'
+      rel='noopener noreferrer'>
+      <Avatar>
+        <FacebookIcon/>
+      </Avatar>
+    </a>
+  </Grid>
+
+// TODO: Turn Social Media on
+const Instagram = props =>
+  <Grid item className={ props.classes.gridItem }>
+    <a
+      href='https://www.instagram.com/thoughtfulbrewer/'
+      target='_blank'
+      rel='noopener noreferrer'>
+      <Avatar>
+        <InstagramIcon/>
+      </Avatar>
+    </a>
+  </Grid>
+
+// TODO: Turn Social Media on
+const Twitter = props =>
+  <Grid item className={ props.classes.gridItem }>
+    <a
+      href='https://twitter.com/ThoughtfulBrew'
+      target='_blank'
+      rel='noopener noreferrer'>
+      <Avatar>
+        <TwitterIcon/>
+      </Avatar>
+    </a>
+  </Grid>
+
+const LinkedIn = props =>
+  <Grid item className={ props.classes.gridItem }>
+    <a
+      href='https://linkedin.com/in/dsaunders2414/'
+      target='_blank'
+      rel='noopener noreferrer'>
+      <Avatar>
+        <LinkedInIcon/>
+      </Avatar>
+    </a>
+  </Grid>
+
+
+export default props => {
   const classes = { ...useStyles(), ...props.classes }
   return (
-    <React.Fragment>
-      <Grid item className={classes.gridItem}>
-        <a
-          href='https://www.facebook.com/thoughtfulbrew/'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <Avatar>
-            <FacebookIcon/>
-          </Avatar>
-        </a>
-      </Grid>
-      <Grid item className={classes.gridItem}>
-        <a
-          href='https://www.instagram.com/thoughtfulbrewer/'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <Avatar>
-            <InstagramIcon/>
-          </Avatar>
-        </a>
-      </Grid>
-      <Grid item className={classes.gridItem}>
-        <a
-          href='https://twitter.com/ThoughtfulBrew'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <Avatar>
-            <TwitterIcon/>
-          </Avatar>
-        </a>
-      </Grid>
-      <Grid item className={classes.gridItem}>
-        <a
-          href='https://linkedin.com/in/dsaunders2414/'
-          target='_blank'
-          rel='noopener noreferrer'>
-          <Avatar>
-            <LinkedInIcon/>
-          </Avatar>
-        </a>
-      </Grid>
-    </React.Fragment>
+    <>
+      <LinkedIn classes={ classes } />
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 import AppBar from '@material-ui/core/AppBar'
 import background from '../background.webp'
-import BlmBanner from '../components/BlmBanner'
+//import BlmBanner from '../components/BlmBanner'
 import MainContentWrapper from '../components/MainContentWrapper'
 import { makeStyles, } from '@material-ui/core/styles'
 import NavBar from '../components/NavBar'
@@ -45,7 +45,6 @@ export default (props) => {
   return (
     <div ref={ rootRef } className={ classes.root }>
       <AppBar position='sticky' className={ classes.appBar }>
-        <BlmBanner/>
         <NavBar/>
       </AppBar>
       <MainContentWrapper>
