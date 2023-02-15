@@ -40,7 +40,7 @@ export default () => {
         </Grid>
         <Grid item xs={12}>
           <Typography variant='h5' className={ classes.dungeon }>
-            Good Beer, Good Times, and the Good Life.
+            "Bringing People Together" through Shared Experience and Collaboration
           </Typography>
         </Grid>
       </Grid>
