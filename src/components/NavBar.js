@@ -1,3 +1,4 @@
+import Avatar from '@material-ui/core/Avatar'
 import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
@@ -6,6 +7,7 @@ import ListItem from '@material-ui/core/ListItem'
 import logoSm from '../logo-sm.webp'
 import { makeStyles } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn'
 import { NavLink } from 'react-router-dom'
 import React, { useState } from 'react'
 import SocialMediaIcons from '../components/SocialMediaIcons'
@@ -67,20 +69,6 @@ export default () => {
       title: 'Contact Us',
     }
   ].map(menuTypographyFunc)
-    .concat([
-    <a
-      href='https://paypal.me/thoughtfulbrew'
-      target='_blank'
-      rel='noopener noreferrer'
-      className={ classes.paypalLink }>
-      <Typography
-        className={ classes.paypal }
-        color='inherit'
-        variant='h4'>
-        Donate
-      </Typography>
-    </a>,
-  ])
 
   return (
     <Toolbar className={ classes.toolbar }>
@@ -113,6 +101,15 @@ export default () => {
         </Hidden>
       </div>
       <Hidden smDown>
+        <a
+          href='https://paypal.me/thoughtfulbrew'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={ classes.paypalLink }>
+          <Avatar>
+            <MonetizationOnIcon />
+          </Avatar>
+        </a>
         <SocialMediaIcons/>
       </Hidden>
     </Toolbar>
